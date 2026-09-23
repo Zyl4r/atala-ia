@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+/venv/
+
+# Production / Build outputs
+build/
+dist/
+*.pyc
+
+# Secrets and local configurations
+.env
+.env.local
+*.local.json
+
+# Logs
+*.log
+logs/
+
+# OS specific files
+.DS_Store
+Thumbs.db
