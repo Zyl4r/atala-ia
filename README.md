@@ -19,3 +19,8 @@ npx.cmd @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
 Esse comando criará um arquivo chamado "output.css" na pasta "src", ele será seu style.css e use ele durante o processo de desenvolvimento
 
 > `--watch` apenas faz com que o Tailwind atualize o arquivo `output.css` automaticamente sempre que você fizer alterações em seu popup.html
+
+---
+
+## Pesquisa téorica
+[Acessar pesquisa téorica - CNW](https://centropaulasouza-my.sharepoint.com/:w:/g/personal/evelyn_novais_aluno_cps_sp_gov_br/IQAs2vxCc8JvQJbC3ofhCOMQATchMG3ksxXTMMjVjRsdrO0?e=YFqLzF)
