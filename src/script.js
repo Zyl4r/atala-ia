@@ -4,6 +4,6 @@ const sideBar = document.getElementById("side-bar");
 hamburgerBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
-    sideBar.classList.toggle("-top-105")
-    sideBar.classList.toggle("top-20")
+    sideBar.classList.toggle("left-87.5")
+    sideBar.classList.toggle("left-50")
 });

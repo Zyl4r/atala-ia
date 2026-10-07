@@ -9,9 +9,9 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-black: #000;
     --spacing: 0.25rem;
     --font-weight-medium: 500;
-    --font-weight-semibold: 600;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -177,26 +177,44 @@
   .relative {
     position: relative;
   }
-  .-top-0 {
-    top: 0px;
-  }
-  .-top-105 {
-    top: calc(var(--spacing) * -105);
-  }
-  .top-0 {
-    top: 0px;
-  }
   .top-20 {
     top: calc(var(--spacing) * 20);
   }
-  .top-25 {
-    top: calc(var(--spacing) * 25);
+  .-left-0 {
+    left: 0px;
   }
-  .top-105 {
-    top: calc(var(--spacing) * 105);
+  .-left-40 {
+    left: calc(var(--spacing) * -40);
   }
-  .top-125 {
-    top: calc(var(--spacing) * 125);
+  .left-0 {
+    left: 0px;
+  }
+  .left-30 {
+    left: calc(var(--spacing) * 30);
+  }
+  .left-40 {
+    left: calc(var(--spacing) * 40);
+  }
+  .left-50 {
+    left: calc(var(--spacing) * 50);
+  }
+  .left-60 {
+    left: calc(var(--spacing) * 60);
+  }
+  .left-80 {
+    left: calc(var(--spacing) * 80);
+  }
+  .left-85 {
+    left: calc(var(--spacing) * 85);
+  }
+  .left-87 {
+    left: calc(var(--spacing) * 87);
+  }
+  .left-87\.5 {
+    left: calc(var(--spacing) * 87.5);
+  }
+  .left-90 {
+    left: calc(var(--spacing) * 90);
   }
   .z-0 {
     z-index: 0;
@@ -210,9 +228,6 @@
   .table {
     display: table;
   }
-  .h-0 {
-    height: 0px;
-  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
@@ -222,17 +237,14 @@
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
-  .h-50 {
-    height: calc(var(--spacing) * 50);
-  }
   .h-105 {
     height: calc(var(--spacing) * 105);
   }
   .h-125 {
     height: calc(var(--spacing) * 125);
   }
-  .h-210 {
-    height: calc(var(--spacing) * 210);
+  .h-fit {
+    height: fit-content;
   }
   .h-full {
     height: 100%;
@@ -240,26 +252,26 @@
   .w-8 {
     width: calc(var(--spacing) * 8);
   }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
   .w-37 {
     width: calc(var(--spacing) * 37);
   }
   .w-37\.5 {
     width: calc(var(--spacing) * 37.5);
   }
-  .w-75 {
-    width: calc(var(--spacing) * 75);
+  .w-62 {
+    width: calc(var(--spacing) * 62);
+  }
+  .w-62\.5 {
+    width: calc(var(--spacing) * 62.5);
   }
   .w-87 {
     width: calc(var(--spacing) * 87);
   }
   .w-87\.5 {
     width: calc(var(--spacing) * 87.5);
-  }
-  .w-\[75\] {
-    width: 75;
-  }
-  .w-\[150px\] {
-    width: 150px;
   }
   .w-full {
     width: 100%;
@@ -279,14 +291,17 @@
   .items-end {
     align-items: flex-end;
   }
+  .items-start {
+    align-items: flex-start;
+  }
   .justify-between {
     justify-content: space-between;
   }
+  .justify-center {
+    justify-content: center;
+  }
   .justify-end {
     justify-content: flex-end;
-  }
-  .justify-start {
-    justify-content: flex-start;
   }
   .gap-1 {
     gap: var(--spacing);
@@ -299,6 +314,9 @@
   }
   .gap-2\.5 {
     gap: calc(var(--spacing) * 2.5);
+  }
+  .gap-30 {
+    gap: calc(var(--spacing) * 30);
   }
   .border {
     border-style: var(--tw-border-style);
@@ -326,52 +344,72 @@
   .p-3\.75 {
     padding: calc(var(--spacing) * 3.75);
   }
+  .p-7 {
+    padding: calc(var(--spacing) * 7);
+  }
+  .p-7\.5 {
+    padding: calc(var(--spacing) * 7.5);
+  }
+  .p-30 {
+    padding: calc(var(--spacing) * 30);
+  }
+  .p-\[30\] {
+    padding: 30;
+  }
+  .p-\[30px\] {
+    padding: 30px;
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
   .px-3\.75 {
     padding-inline: calc(var(--spacing) * 3.75);
   }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .px-10 {
+    padding-inline: calc(var(--spacing) * 10);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
-  .py-3\.5 {
-    padding-block: calc(var(--spacing) * 3.5);
-  }
   .py-3\.75 {
     padding-block: calc(var(--spacing) * 3.75);
   }
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
-  }
-  .py-5 {
-    padding-block: calc(var(--spacing) * 5);
-  }
-  .py-10 {
-    padding-block: calc(var(--spacing) * 10);
-  }
-  .py-\[15px\] {
-    padding-block: 15px;
+  .text-center {
+    text-align: center;
   }
   .font-\[Poppins\] {
     font-family: Poppins;
   }
+  .text-\[10px\] {
+    font-size: 10px;
+  }
   .text-\[14px\] {
     font-size: 14px;
+  }
+  .text-\[18px\] {
+    font-size: 18px;
+  }
+  .text-\[20px\] {
+    font-size: 20px;
   }
   .text-\[28px\] {
     font-size: 28px;
   }
-  .font-\[14px\] {
-    --tw-font-weight: 14px;
-    font-weight: 14px;
-  }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
+  }
+  .wrap-break-word {
+    overflow-wrap: break-word;
+  }
+  .text-black {
+    color: var(--color-black);
+  }
+  .text-dark-green {
+    color: var(--color-dark-green);
   }
   .text-off-white {
     color: var(--color-off-white);
@@ -379,14 +417,12 @@
   .underline {
     text-decoration-line: underline;
   }
+  .opacity-70 {
+    opacity: 70%;
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .transition-all {
     transition-property: all;
@@ -405,10 +441,6 @@
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
-  }
-  .duration-500 {
-    --tw-duration: 500ms;
-    transition-duration: 500ms;
   }
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
