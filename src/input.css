@@ -1,1 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import "tailwindcss";
+
+@theme {
+    --color-white: #FFFCF7;
+    --color-off-white: #FFF8EE;
+    --color-hover-off-white: #ebd7bc;
+    --color-dark-green: #3B413C;
+    --color-light-green: #7B9E87;
+    --color-dark: #22181C;
+    --color-secondary-off-white: #E8DFD2;
+    --color-gray: #706F66;
+    --color-light-secondary: #F6E4D8;
+    --color-light-secondary-green: #E8EFE5;
+    --color-success: #43664D;
+    --color-orange: #E29578;
+    --color-hover-orange: #EDA58A;
+}
