@@ -192,6 +192,9 @@
   .flex {
     display: flex;
   }
+  .hidden {
+    display: none;
+  }
   .table {
     display: table;
   }
@@ -240,6 +243,12 @@
   .h-13\.5 {
     height: calc(var(--spacing) * 13.5);
   }
+  .h-18 {
+    height: calc(var(--spacing) * 18);
+  }
+  .h-18\.25 {
+    height: calc(var(--spacing) * 18.25);
+  }
   .h-22 {
     height: calc(var(--spacing) * 22);
   }
@@ -279,11 +288,20 @@
   .w-9 {
     width: calc(var(--spacing) * 9);
   }
+  .w-15 {
+    width: calc(var(--spacing) * 15);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
   .w-87 {
     width: calc(var(--spacing) * 87);
   }
   .w-87\.5 {
     width: calc(var(--spacing) * 87.5);
+  }
+  .w-fit {
+    width: fit-content;
   }
   .w-full {
     width: 100%;
@@ -309,6 +327,9 @@
   .items-center {
     align-items: center;
   }
+  .items-end {
+    align-items: flex-end;
+  }
   .items-start {
     align-items: flex-start;
   }
@@ -333,6 +354,9 @@
   .gap-1 {
     gap: var(--spacing);
   }
+  .gap-1\.25 {
+    gap: calc(var(--spacing) * 1.25);
+  }
   .gap-1\.75 {
     gap: calc(var(--spacing) * 1.75);
   }
@@ -344,6 +368,9 @@
   }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
@@ -394,6 +421,12 @@
   .stroke-gray {
     stroke: var(--color-gray);
   }
+  .object-contain {
+    object-fit: contain;
+  }
+  .object-cover {
+    object-fit: cover;
+  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -433,11 +466,17 @@
   .text-center {
     text-align: center;
   }
+  .align-top {
+    vertical-align: top;
+  }
   .font-\[Inter\] {
     font-family: Inter;
   }
   .font-\[Lora\] {
     font-family: Lora;
+  }
+  .text-\[9px\] {
+    font-size: 9px;
   }
   .text-\[10px\] {
     font-size: 10px;
@@ -456,6 +495,9 @@
   }
   .text-\[24px\] {
     font-size: 24px;
+  }
+  .text-\[25px\] {
+    font-size: 25px;
   }
   .font-normal {
     --tw-font-weight: var(--font-weight-normal);
@@ -504,12 +546,6 @@
     }
     .hover\:cursor-pointer:hover {
       cursor: pointer;
-    }
-    .hover\:bg-gray:hover {
-      background-color: var(--color-gray);
-    }
-    .hover\:bg-hover-off-white:hover {
-      background-color: var(--color-hover-off-white);
     }
     .hover\:bg-hover-orange:hover {
       background-color: var(--color-hover-orange);

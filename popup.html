@@ -15,7 +15,7 @@
     </header>
 
 
-    <section id="home-page">
+    <section id="home-page" class="hidden">
         <div class="w-full h-full flex justify-center items-start flex-col px-4.5 py-3.5 gap-3">
             <div class="w-full h-fit flex flex-col gap-1">
                 <h1 class="text-dark text-[24px] font-normal font-[Lora]">Comprar bem começa aqui</h1>
@@ -84,11 +84,56 @@
         </div>
     </section>
 
-    <nav id="nav-container" class="w-full h-13.5 px-2.5 py-1.5 flex bg-white font-[Inter] border-t border-secondary-off-white">
-        <div class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
+    <section id="product-page">
+        <div class="w-full h-full flex justify-center items-start flex-col px-4.5 py-3.5 gap-3">
+            <div class="w-full h-fit flex flex-col gap-1.75">
+                <h1 class="text-gray text-[10px] font-semibold font-[Inter]">ANÁLISE DE PRODUTO</h1>
+
+                <div class="w-full h-fit flex gap-3">
+                    <img src="https://images.unsplash.com/photo-1545127398-14699f92334b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                        alt="" class="w-15 h-13.5 object-cover rounded-lg">
+
+                    <div class="w-full h-fit flex flex-col gap-1">
+                        <span class="text-dark text-[13px] font-semibold font-[Inter]">Fone de ouvido bluetooth</span>
+                        <span class="text-gray text-[10px] font-semibold font-[Inter]">Fone sem fio - Dourado - Mercado
+                            Livre</span>
+                        <div class="w-fit h-fit flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bell preview-icon">
+                                <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+                                <path
+                                    d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+                            </svg>
+                            <span class="text-success text-[9px] align-top font-normal font-[Inter]">Alerta ativo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full h-fit flex justify-between">
+                <div class="w-fit h-fit flex flex-col gap-0.5">
+                    <span class="text-gray font-[Inter] text-[10px]">Preço atual</span>
+                    <span class="text-dark font-[Inter] font-semibold text-[25px]">R$ 399,90</span>
+                </div>
+
+                <div class="w-fit h-fit flex flex-col items-end gap-1.25">
+                    <div class="w-fit h-fit px-2 py-1 bg-light-secondary-green rounded-full">
+                        <span class="text-success text-[11px] font-[Inter] font-normal">↓ 14% no mês</span>
+                    </div>
+
+                    <span class="text-gray font-[Inter] text-[9px]">Atualizado há 32 minutos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav id="nav-container"
+        class="w-full h-13.5 px-2.5 py-1.5 flex bg-white font-[Inter] border-t border-secondary-off-white">
+        <div
+            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="w-4.25 h-4.25 stroke-gray">
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.25 h-4.25 stroke-gray">
                 <path d="M12 16v5" />
                 <path d="M16 14.639V21" />
                 <path d="M20 10.656V21" />
@@ -100,10 +145,10 @@
             <span class="text-gray text-[10px] font-normal">Produto</span>
         </div>
 
-        <div class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
+        <div
+            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="w-4.25 h-4.25 stroke-gray">
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.25 h-4.25 stroke-gray">
                 <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
                 <path d="M3 3v5h5" />
                 <path d="M12 7v5l4 2" />
@@ -112,10 +157,10 @@
             <span class="text-gray text-[10px] font-normal">Análises</span>
         </div>
 
-        <div class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
+        <div
+            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="w-4.25 h-4.25 stroke-gray">
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.25 h-4.25 stroke-gray">
                 <path d="M10 5H3" />
                 <path d="M12 19H3" />
                 <path d="M14 3v4" />
@@ -130,10 +175,10 @@
             <span class="text-gray text-[10px] font-normal">Ajustes</span>
         </div>
 
-        <div class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
+        <div
+            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="w-4.25 h-4.25 stroke-gray">
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.25 h-4.25 stroke-gray">
                 <path d="M12 17h.01" />
                 <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
                 <circle cx="12" cy="12" r="10" />
