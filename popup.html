@@ -11,11 +11,11 @@
 <body class="bg-off-white w-87.5 h-125 border-0 antialiased">
     <header id="header-container"
         class="relative w-full h-13 p-3.75 flex justify-between items-center font-[Lora] z-50 border-b border-secondary-off-white">
-        <h1 class="text-dark text-[23px] font-normal">Atala.IA</h1>
+        <h1 class="text-dark text-[23px] font-normal hover:cursor-pointer" id="header-btn">Atala.IA</h1>
     </header>
 
 
-    <section id="home-page" class="hidden">
+    <section id="home-page" class="">
         <div class="w-full h-full flex justify-center items-start flex-col px-4.5 py-3.5 gap-3">
             <div class="w-full h-fit flex flex-col gap-1">
                 <h1 class="text-dark text-[24px] font-normal font-[Lora]">Comprar bem começa aqui</h1>
@@ -84,7 +84,7 @@
         </div>
     </section>
 
-    <section id="product-page">
+    <section id="product-page" class="hidden">
         <div class="w-full h-full flex justify-center items-start flex-col px-4.5 py-3.5 gap-3">
             <div class="w-full h-fit flex flex-col gap-1.75">
                 <h1 class="text-gray text-[10px] font-semibold font-[Inter]">ANÁLISE DE PRODUTO</h1>
@@ -125,13 +125,60 @@
                     <span class="text-gray font-[Inter] text-[9px]">Atualizado há 32 minutos</span>
                 </div>
             </div>
+
+            <div class="w-full h-fit rounded-xl bg-white border border-secondary-off-white p-2.5 flex flex-col gap-1.5">
+                <div class="w-full h-fit flex items-center justify-between">
+                    <span class="font-semibold font-[Inter] text-dark-green text-[11px]">Últimos 30 dias</span>
+                    <span class="font-normal font-[Inter] text-gray text-[9px]">Mín. R$319,99</span>
+                </div>
+
+                <div class="w-full h-13.75 flex flex-col gap-4.5 py-2">
+                    <div class="w-full h-px bg-secondary-off-white"></div>
+                    <div class="w-full h-px bg-secondary-off-white"></div>
+                    <div class="w-full h-px bg-secondary-off-white"></div>
+                </div>
+
+                <div class="w-full h-fit flex items-center justify-between">
+                    <span class="font-normal font-[Inter] text-gray text-[9px]">09 set.</span>
+                    <span class="font-normal font-[Inter] text-gray text-[9px]">24 set.</span>
+                    <span class="font-normal font-[Inter] text-gray text-[9px]">09 out.</span>
+                </div>
+            </div>
+
+            <div class="w-full h-fit bg-light-secondary-green p-2.5 flex items-center justify-start gap-2 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="stroke-success">
+                    <path
+                        d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+                    <path d="m16 9-5.5 5.5L8 12" />
+                </svg>
+
+                <div class="w-full h-fit flex flex-col gap-0.75">
+                    <span class="font-semibold font-[Inter] text-success text-[11px]">Bom momento para comprar</span>
+                    <span class="font-normal font-[Inter] text-dark-green text-[10px]">R$ 129,10 abaixo do início do
+                        período</span>
+                </div>
+            </div>
+
+            <button
+                class="w-full h-9 rounded-lg bg-orange flex justify-center items-center gap-1.75 font-[Inter] transition-all duration-300 hover:cursor-pointer hover:bg-hover-orange">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="stroke-dark">
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                </svg>
+
+                <span class="text-dark text-[12px] font-[Inter] font-semibold">Ver minhas análises</span>
+            </button>
         </div>
     </section>
 
     <nav id="nav-container"
         class="w-full h-13.5 px-2.5 py-1.5 flex bg-white font-[Inter] border-t border-secondary-off-white">
         <div
-            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
+            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary" id="product-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.25 h-4.25 stroke-gray">
                 <path d="M12 16v5" />
