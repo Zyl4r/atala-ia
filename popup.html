@@ -10,13 +10,13 @@
 
 <body class="bg-off-white w-87.5 h-125 border-0 antialiased flex flex-col relative pb-16">
     <header id="header-container"
-        class="relative w-full h-[60px] p-3.75 flex justify-between items-center font-[Jost] bg-blue">
-        <img src="/assets/logo-header.png" class="w-[140px] h-[50px]">
+        class="relative w-full h-15 p-3.75 flex justify-center items-center font-[Jost] bg-blue">
+        <img src="/assets/logo-header.png" class="w-32.25 h-12.5">
     </header>
 
     <!--- Home Page -->
-    <section id="home-page">
-        <div class="w-full h-full flex justify-center items-center flex-col px-4.5 py-3.5 gap-3 mt-[50px]">
+    <section id="home-page" class="hidden">
+        <div class="w-full h-full flex justify-center items-center flex-col px-4.5 py-3.5 gap-3 mt-12.5">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none"
                 stroke="#E29578" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-shopping-bag preview-icon">
@@ -26,16 +26,16 @@
                     d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z" />
             </svg>
             <div class="w-full h-fit flex flex-col gap-1">
-                <h1 class="text-dark text-[20px] text-center font-medium font-[Jost] mt-[10px]">Sua próxima compra
+                <h1 class="text-dark text-[20px] text-center font-medium font-[Jost] mt-2.5">Sua próxima compra
                     começa aqui.
                 </h1>
 
-                <p class="text-gray text-[12px] text-center font-[Inter] font-normal mt-[10px]"> Abra uma página de
+                <p class="text-gray text-[12px] text-center font-[Inter] font-normal mt-2.5"> Abra uma página de
                     produto em uma loja
                     compatível e clique no Atala.IA para analisar o preço. </p>
 
                 <button
-                    class="w-[200px] h-[40px] mx-auto rounded-lg bg-orange flex justify-center items-center gap-1.75 font-[Inter] transition-all duration-300 hover:cursor-pointer hover:bg-hover-orange mt-[15px]">
+                    class="w-50 h-10 mx-auto rounded-lg bg-orange flex justify-center items-center gap-1.75 font-[Inter] transition-all duration-300 hover:cursor-pointer hover:bg-hover-orange mt-3.75">
                     <span class="text-off-white text-[15px] font-semibold">Como funciona?</span>
                 </button>
             </div>
@@ -60,12 +60,12 @@
                         <div class="w-fit h-fit flex items-center gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-bell preview-icon">
+                                stroke-linejoin="round" class="stroke-orange">
                                 <path d="M10.268 21a2 2 0 0 0 3.464 0" />
                                 <path
                                     d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
                             </svg>
-                            <span class="text-success text-[9px] align-top font-normal font-[Inter]">Alerta ativo</span>
+                            <span class="text-orange text-[9px] align-top font-normal font-[Inter]">Alerta ativo</span>
                         </div>
                     </div>
                 </div>
@@ -78,13 +78,61 @@
                 </div>
 
                 <div class="w-fit h-fit flex flex-col items-end gap-1.25">
-                    <div class="w-fit h-fit px-2 py-1 bg-light-secondary-green rounded-full">
-                        <span class="text-success text-[11px] font-[Inter] font-normal">↓ 14% no mês</span>
+                    <div class="w-fit h-fit px-2 py-1 bg-light-blue rounded-full border border-secondary-blue">
+                        <span class="text-dark-blue text-[11px] font-[Inter] font-normal">↓ 14% no mês</span>
                     </div>
 
                     <span class="text-gray font-[Inter] text-[9px]">Atualizado há 32 minutos</span>
                 </div>
             </div>
+
+            <div class="w-full h-fit rounded-xl bg-white border border-secondary-off-white p-2.5 flex flex-col gap-1.5">
+                <div class="w-full h-fit flex items-center justify-between">
+                    <span class="font-semibold font-[Inter] text-dark-green text-[11px]">Últimos 30 dias</span>
+                    <span class="font-normal font-[Inter] text-gray text-[9px]">Mín. R$319,99</span>
+                </div>
+
+                <div class="w-full h-13.75 flex flex-col gap-4.5 py-2">
+                    <div class="w-full h-px bg-secondary-off-white"></div>
+                    <div class="w-full h-px bg-secondary-off-white"></div>
+                    <div class="w-full h-px bg-secondary-off-white"></div>
+                </div>
+
+                <div class="w-full h-fit flex items-center justify-between">
+                    <span class="font-normal font-[Inter] text-gray text-[9px]">09 set.</span>
+                    <span class="font-normal font-[Inter] text-gray text-[9px]">24 set.</span>
+                    <span class="font-normal font-[Inter] text-gray text-[9px]">09 out.</span>
+                </div>
+            </div>
+
+            <div class="w-full h-12.5 flex items-center justify-between gap-3 rounded-lg">
+
+                <div class="w-full h-full flex flex-col gap-0.75 bg-light-blue border border-secondary-blue items-center justify-center rounded-sm">
+                    <span class="font-bold font-[Jost] text-dark-blue text-[10.5px]">Bom momento para comprar</span>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="stroke-dark-blue">
+                        <path
+                            d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
+                        <path d="m16 9-5.5 5.5L8 12" />
+                    </svg>
+                </div>
+
+                <button
+                    class="w-full h-full rounded-lg bg-orange border border-dark-orange flex justify-center items-center gap-1.75 font-[Inter] transition-all duration-300 hover:cursor-pointer hover:bg-hover-orange">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="stroke-light-secondary">
+                        <path d="M7 7h10v10" />
+                        <path d="M7 17 17 7" />
+                    </svg>
+
+                    <span class="text-light-secondary text-[12px] font-[Inter] font-semibold">Ver minhas análises</span>
+                </button>
+            </div>
+
+
         </div>
     </section>
 
