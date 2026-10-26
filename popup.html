@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="src/output.css">
 </head>
 
-<body class="bg-off-white w-87.5 h-125 border-0 antialiased">
+<body class="bg-off-white w-87.5 h-125 border-0 antialiased flex flex-col relative pb-16">
     <header id="header-container"
         class="relative w-full h-[60px] p-3.75 flex justify-between items-center font-[Jost] bg-blue">
-        <h1 class="text-off-white text-[23px] font-medium">Atala.IA</h1>
+        <img src="/assets/logo-header.png" class="w-[140px] h-[50px]">
     </header>
 
     <!--- Home Page -->
     <section id="home-page">
-        <div class="w-full h-full flex justify-center items-center flex-col px-4.5 py-3.5 gap-3 mt-[70px]">
+        <div class="w-full h-full flex justify-center items-center flex-col px-4.5 py-3.5 gap-3 mt-[50px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none"
                 stroke="#E29578" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-shopping-bag preview-icon">
@@ -35,7 +35,7 @@
                     compatível e clique no Atala.IA para analisar o preço. </p>
 
                 <button
-                    class="w-[200px] h-[40px] mx-auto rounded-lg bg-orange flex justify-center items-center gap-1.75 mt-[30px] font-[Inter] transition-all duration-300 hover:cursor-pointer hover:bg-hover-orange">
+                    class="w-[200px] h-[40px] mx-auto rounded-lg bg-orange flex justify-center items-center gap-1.75 font-[Inter] transition-all duration-300 hover:cursor-pointer hover:bg-hover-orange mt-[15px]">
                     <span class="text-off-white text-[15px] font-semibold">Como funciona?</span>
                 </button>
             </div>
@@ -88,10 +88,31 @@
         </div>
     </section>
 
+    <!--- Histórico -->
+    <section id="history-page" class="hidden">
+
+    </section>
+
+    <!--- Alertas -->
+    <section id="alerts-page" class="hidden">
+
+    </section>
+
+    <!--- Ajustes -->
+    <section id="settings-page" class="hidden">
+
+    </section>
+
+    <!--- Ajuda -->
+    <section id="help-page" class="hidden">
+
+    </section>
+
+    <!--- Barra de Navegação -->
     <nav id="nav-container"
-        class="w-full h-13.5 px-2.5 py-1.5 flex bg-white font-[Inter] border-t border-secondary-off-white mt-[70px]">
-        <div
-            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
+        class="fixed bottom-0 left-0 w-full h-13.5 px-2.5 py-1.5 flex bg-white font-[Inter] border-t border-secondary-off-white z-50">
+        <div id="btn-nav-product"
+            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.25 h-4.25 stroke-gray">
                 <path d="M12 16v5" />
@@ -105,8 +126,8 @@
             <span class="text-gray text-[10px] font-normal">Produto</span>
         </div>
 
-        <div
-            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
+        <div id="btn-nav-history"
+            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.25 h-4.25 stroke-gray">
                 <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
@@ -117,8 +138,8 @@
             <span class="text-gray text-[10px] font-normal">Histórico</span>
         </div>
 
-        <div
-            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
+        <div id="btn-nav-alerts"
+            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.25 h-4.25 stroke-gray">
                 <path d="M10.268 21a2 2 0 0 0 3.464 0" />
@@ -129,8 +150,8 @@
             <span class="text-gray text-[10px] font-normal">Alertas</span>
         </div>
 
-        <div
-            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
+        <div id="btn-nav-settings"
+            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.25 h-4.25 stroke-gray">
                 <path d="M10 5H3" />
@@ -147,8 +168,8 @@
             <span class="text-gray text-[10px] font-normal">Ajustes</span>
         </div>
 
-        <div
-            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer hover:bg-light-secondary">
+        <div id="btn-nav-help"
+            class="w-full h-full flex justify-center items-center flex-col gap-0.75 bg-white rounded-lg transition-all duration-300 hover:cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4.25 h-4.25 stroke-gray">
                 <path d="M12 17h.01" />
