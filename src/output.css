@@ -12,6 +12,7 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-white: #FFFCF7;
     --spacing: 0.25rem;
     --font-weight-normal: 400;
@@ -33,10 +34,13 @@
     --color-secondary-off-white: #E8DFD2;
     --color-gray: #706F66;
     --color-light-secondary: #F6E4D8;
+    --color-light-secondary-green: #E8EFE5;
+    --color-success: #43664D;
     --color-orange: #E29578;
     --color-dark-orange: #B26548;
     --color-hover-orange: #EDA58A;
     --color-blue: #5D8198;
+    --color-light-gray: #C3C2B9;
   }
 }
 @layer base {
@@ -188,6 +192,17 @@
   }
 }
 @layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border-width: 0;
+  }
   .fixed {
     position: fixed;
   }
@@ -202,6 +217,24 @@
   }
   .z-50 {
     z-index: 50;
+  }
+  .mx-\[0px\] {
+    margin-inline: 0px;
+  }
+  .mx-\[10px\] {
+    margin-inline: 10px;
+  }
+  .mx-\[20px\] {
+    margin-inline: 20px;
+  }
+  .mx-\[50px\] {
+    margin-inline: 50px;
+  }
+  .mx-\[150px\] {
+    margin-inline: 150px;
+  }
+  .mx-\[2000px\] {
+    margin-inline: 2000px;
   }
   .mx-auto {
     margin-inline: auto;
@@ -253,6 +286,9 @@
   }
   .w-4\.25 {
     width: calc(var(--spacing) * 4.25);
+  }
+  .w-9 {
+    width: calc(var(--spacing) * 9);
   }
   .w-15 {
     width: calc(var(--spacing) * 15);
@@ -308,6 +344,9 @@
   .gap-1\.75 {
     gap: calc(var(--spacing) * 1.75);
   }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
@@ -334,6 +373,14 @@
     border-style: var(--tw-border-style);
     border-width: 0px;
   }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-\[1px\] {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .border-t {
     border-top-style: var(--tw-border-style);
     border-top-width: 1px;
@@ -349,6 +396,9 @@
   }
   .bg-blue {
     background-color: var(--color-blue);
+  }
+  .bg-light-gray {
+    background-color: var(--color-light-gray);
   }
   .bg-light-blue {
     background-color: var(--color-light-blue);
@@ -376,6 +426,9 @@
   }
   .stroke-orange {
     stroke: var(--color-orange);
+  }
+  .object-contain {
+    object-fit: contain;
   }
   .object-cover {
     object-fit: cover;
@@ -440,6 +493,9 @@
   .text-\[13px\] {
     font-size: 13px;
   }
+  .text-\[14px\] {
+    font-size: 14px;
+  }
   .text-\[15px\] {
     font-size: 15px;
   }
@@ -496,6 +552,69 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
+  .peer-checked\:bg-orange:is(:where(.peer):checked ~ *) {
+    background-color: var(--color-orange);
+  }
+  .peer-focus\:outline-none:is(:where(.peer):focus ~ *) {
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+  .after\:absolute::after {
+    content: var(--tw-content);
+    position: absolute;
+  }
+  .after\:top-\[2px\]::after {
+    content: var(--tw-content);
+    top: 2px;
+  }
+  .after\:left-\[2px\]::after {
+    content: var(--tw-content);
+    left: 2px;
+  }
+  .after\:h-4::after {
+    content: var(--tw-content);
+    height: calc(var(--spacing) * 4);
+  }
+  .after\:w-4::after {
+    content: var(--tw-content);
+    width: calc(var(--spacing) * 4);
+  }
+  .after\:rounded-full::after {
+    content: var(--tw-content);
+    border-radius: calc(infinity * 1px);
+  }
+  .after\:border::after {
+    content: var(--tw-content);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .after\:border-gray-300::after {
+    content: var(--tw-content);
+    border-color: var(--color-gray-300);
+  }
+  .after\:bg-white::after {
+    content: var(--tw-content);
+    background-color: var(--color-white);
+  }
+  .after\:transition-all::after {
+    content: var(--tw-content);
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .after\:content-\[\'\'\]::after {
+    --tw-content: '';
+    content: var(--tw-content);
+  }
+  .peer-checked\:after\:translate-x-full:is(:where(.peer):checked ~ *)::after {
+    content: var(--tw-content);
+    --tw-translate-x: 100%;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .peer-checked\:after\:border-white:is(:where(.peer):checked ~ *)::after {
+    content: var(--tw-content);
+    border-color: var(--color-white);
+  }
   @media (hover: hover) {
     .hover\:cursor-pointer:hover {
       cursor: pointer;
@@ -517,6 +636,27 @@
 @property --tw-duration {
   syntax: "*";
   inherits: false;
+  initial-value: 0;
+}
+@property --tw-content {
+  syntax: "*";
+  initial-value: "";
+  inherits: false;
+}
+@property --tw-translate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-translate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
 }
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
@@ -524,6 +664,10 @@
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-duration: initial;
+      --tw-content: "";
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-translate-z: 0;
     }
   }
 }

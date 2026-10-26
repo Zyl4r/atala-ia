@@ -138,12 +138,114 @@
 
     <!--- Histórico -->
     <section id="history-page" class="hidden">
-
+        <div id="icon-clock" class="ml-[12px] mt-[12px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="#E29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-rotate-ccw-clock preview-icon">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+                <path d="M12 7v5l4 2" />
+            </svg>
+        </div>
+        <div>
+            <h1 class="text-[25px] text-dark font-semibold font-[Jost] ml-[18px]">
+                Histórico
+            </h1>
+        </div>
+        <div id="card-1" class="bg-orange">
+            
+        </div>
     </section>
 
     <!--- Alertas -->
     <section id="alerts-page" class="hidden">
+        <div class="flex items-center gap-2 mt-[20px]">
+            <div id="icon-bel" class=" ml-[12px]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                    stroke="#E29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-bell-ring preview-icon">
+                    <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+                    <path d="M22 8c0-2.3-.8-4.3-2-6" />
+                    <path
+                        d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+                    <path d="M4 2C2.8 3.7 2 5.7 2 8" />
+                </svg>
+            </div>
+            <h1 class="text-[25px] text-dark font-semibold font-[Jost]"> Seus alertas </h1>
+        </div>
 
+        <!--- Fone -->
+        <div
+            class="w-[330px] h-auto border-[1px] border-light-gray rounded-lg mx-auto mt-[10px] flex flex-col p-3 gap-3">
+
+            <div class="flex items-center gap-3 w-full">
+                <img src="https://images.unsplash.com/photo-1545127398-14699f92334b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                    alt="Fone de ouvido"
+                    class="w-22 h-22 object-cover rounded-lg border-[1px] border-light-gray shrink-0">
+
+                <div class="flex items-center justify-between w-full">
+                    <div class="flex flex-col gap-0.5">
+                        <h2 class="text-dark text-[14px] font-semibold font-[Inter]">Fone de ouvido bluetooth</h2>
+                        <p class="text-gray text-[11px] font-normal font-[Inter]">Preço atual: R$399,90</p>
+                        <p class="text-gray text-[11px] font-normal font-[Inter]">Avisar quando chegar a: R$250,00</p>
+                    </div>
+
+                    <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-2">
+                        <input type="checkbox" id="toggle-alert" class="sr-only peer" checked>
+                        <div
+                            class="w-9 h-5 bg-light-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange">
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+
+            <!--- Copo Stanley -->
+             <div class="flex items-center gap-3 w-full">
+                <img src="/assets/copostanley.png"
+                    alt="Copo Stanley"
+                    class="w-22 h-22 object-cover rounded-lg border-[1px] border-light-gray shrink-0">
+
+                <div class="flex items-center justify-between w-full">
+                    <div class="flex flex-col gap-0.5">
+                        <h2 class="text-dark text-[14px] font-semibold font-[Inter]">Copo Stanley</h2>
+                        <p class="text-gray text-[11px] font-normal font-[Inter]">Preço atual: R$200,00</p>
+                        <p class="text-gray text-[11px] font-normal font-[Inter]">Avisar quando chegar a: R$150,00</p>
+                    </div>
+
+                    <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-2">
+                        <input type="checkbox" id="toggle-alert" class="sr-only peer" checked>
+                        <div
+                            class="w-9 h-5 bg-light-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange">
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!--- Copo Stanley -->
+             <div class="flex items-center gap-3 w-full">
+                <img src="/assets/mouse.jpg"
+                    alt="Mouse"
+                    class="w-22 h-22 object-cover rounded-lg border-[1px] border-light-gray shrink-0">
+
+                <div class="flex items-center justify-between w-full">
+                    <div class="flex flex-col gap-0.5">
+                        <h2 class="text-dark text-[14px] font-semibold font-[Inter]">Mouse Classic Box</h2>
+                        <p class="text-gray text-[11px] font-normal font-[Inter]">Preço atual: R$15,00</p>
+                        <p class="text-gray text-[11px] font-normal font-[Inter]">Avisar quando chegar a: R$10,00</p>
+                    </div>
+
+                    <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-2">
+                        <input type="checkbox" id="toggle-alert" class="sr-only peer" checked>
+                        <div
+                            class="w-9 h-5 bg-light-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange">
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+        </div>
     </section>
 
     <!--- Ajustes -->
