@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="src/output.css">
 </head>
 
-<body class="bg-off-white w-87.5 h-125 border-0 antialiased flex flex-col relative pb-16">
+<body class="bg-off-white w-87.5 h-125 border-0 antialiased flex flex-col relative pb-16 overflow-y-auto">
     <header id="header-container"
         class="relative w-full h-15 p-3.75 flex justify-center items-center font-[Jost] bg-blue">
         <img src="/assets/logo-header.png" class="w-32.25 h-12.5">
     </header>
 
-    <!--- Home Page -->
-    <section id="home-page" class="hidden">
+    <!--- HOME PAGE -->
+    <section id="home-page">
         <div class="w-full h-full flex justify-center items-center flex-col px-4.5 py-3.5 gap-3 mt-12.5">
             <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none"
                 stroke="#E29578" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
@@ -43,7 +43,7 @@
 
     </section>
 
-    <!--- Produto -->
+    <!--- PRODUTO -->
     <section id="product-page" class="hidden">
         <div class="w-full h-full flex justify-center items-start flex-col px-4.5 py-3.5 gap-3">
             <div class="w-full h-fit flex flex-col gap-1.75">
@@ -107,7 +107,8 @@
 
             <div class="w-full h-12.5 flex items-center justify-between gap-3 rounded-lg">
 
-                <div class="w-full h-full flex flex-col gap-0.75 bg-light-blue border border-secondary-blue items-center justify-center rounded-sm">
+                <div
+                    class="w-full h-full flex flex-col gap-0.75 bg-light-blue border border-secondary-blue items-center justify-center rounded-sm">
                     <span class="font-bold font-[Jost] text-dark-blue text-[10.5px]">Bom momento para comprar</span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -136,7 +137,7 @@
         </div>
     </section>
 
-    <!--- Histórico -->
+    <!--- HISTÓRICO -->
     <section id="history-page" class="hidden">
         <div id="icon-clock" class="ml-[12px] mt-[12px]">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -153,11 +154,10 @@
             </h1>
         </div>
         <div id="card-1" class="bg-orange">
-            <
         </div>
     </section>
 
-    <!--- Alertas -->
+    <!--- ALERTAS -->
     <section id="alerts-page" class="hidden">
         <div class="flex items-center gap-2 mt-[20px]">
             <div id="icon-bel" class=" ml-[12px]">
@@ -201,9 +201,8 @@
 
 
             <!--- Copo Stanley -->
-             <div class="flex items-center gap-3 w-full">
-                <img src="/assets/copostanley.png"
-                    alt="Copo Stanley"
+            <div class="flex items-center gap-3 w-full">
+                <img src="/assets/copostanley.png" alt="Copo Stanley"
                     class="w-22 h-22 object-cover rounded-lg border-[1px] border-light-gray shrink-0">
 
                 <div class="flex items-center justify-between w-full">
@@ -222,10 +221,9 @@
                 </div>
             </div>
 
-            <!--- Copo Stanley -->
-             <div class="flex items-center gap-3 w-full">
-                <img src="/assets/mouse.jpg"
-                    alt="Mouse"
+            <!--- Mouse -->
+            <div class="flex items-center gap-3 w-full">
+                <img src="/assets/mouse.jpg" alt="Mouse"
                     class="w-22 h-22 object-cover rounded-lg border-[1px] border-light-gray shrink-0">
 
                 <div class="flex items-center justify-between w-full">
@@ -248,12 +246,100 @@
         </div>
     </section>
 
-    <!--- Ajustes -->
+    <!--- AJUSTES -->
     <section id="settings-page" class="hidden">
+        <div class="flex items-center gap-2 mt-[20px]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
+                stroke="#E29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-sliders-horizontal preview-icon ml-[10px]">
+                <path d="M10 5H3" />
+                <path d="M12 19H3" />
+                <path d="M14 3v4" />
+                <path d="M16 17v4" />
+                <path d="M21 12h-9" />
+                <path d="M21 19h-5" />
+                <path d="M21 5h-7" />
+                <path d="M8 10v4" />
+                <path d="M8 12H3" />
+            </svg>
+            <h1 class="text-[25px] text-dark font-semibold font-[Jost]"> Atala.IA do seu jeito: </h1>
+        </div>
+
+        <div id="alertas"
+            class="w-[330px] h-[150px] border-[1px] border-light-gray rounded-lg mx-auto mt-[15px] flex flex-col p-3 gap-3">
+            <div class="flex items-center justify-between w-full">
+
+                <div class="flex flex-col gap-0.5">
+                    <h2 class="text-dark text-[15px] font-semibold font-[Inter] text-orange">ALERTAS</h2>
+                    <p class="text-dark text-[13px] font-semibold font-[Inter] mt-[5px]">Queda de preço</p>
+                    <p class="text-gray text-[11px] font-normal font-[Inter] mt-[1px]">Avisar quando o preço baixar
+                    </p>
+                    <p class="text-dark text-[13px] font-semibold font-[Inter] mt-[5px]">Resumo Semanal</p>
+                    <p class="text-gray text-[11px] font-normal font-[Inter] mt-[1px]">Suas oportunidades, toda segunda
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-9">
+                    <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-2 mt-[20px]">
+                        <input type="checkbox" id="toggle-alert" class="sr-only peer" checked>
+                        <div
+                            class="w-9 h-5 mt[20px] bg-light-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange">
+                        </div>
+                    </label>
+                    <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-2">
+                        <input type="checkbox" id="toggle-alert" class="sr-only peer" checked>
+                        <div
+                            class="w-9 h-5 mt[20px] bg-light-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange">
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="alertas"
+            class="w-[330px] h-[160px] border-[1px] border-light-gray rounded-lg mx-auto mt-[15px] flex flex-col p-3 gap-3">
+            <div class="flex items-center justify-between w-full">
+
+                <div class="flex flex-col gap-0.5">
+                    <h2 class="text-dark text-[15px] font-semibold font-[Inter] text-orange">MONITORAMENTO</h2>
+                    <p class="text-dark text-[13px] font-semibold font-[Inter] mt-[15px]">Verificar preços</p>
+                    <p class="text-dark text-[13px] font-semibold font-[Inter] mt-[30px]">Analisar ao abrir uma loja</p>
+                    <p class="text-gray text-[11px] font-normal font-[Inter] mt-[1px]">Reconheça produtos
+                        automaticamente
+                    </p>
+                </div>
+
+                <div class="flex flex-col gap-5">
+                    <div class="mt-[30px] relative w-fit">
+                        <select
+                            class=" appearance-none bg-transparent border border-light-gray rounded-xl px-3 py-1.5 pr-8 text-[12px] text-dark font-[Inter] cursor-pointer focus:outline-none">
+                            <option value="6h">A cada 6 horas</option>
+                            <option value="12h">A cada 12 horas</option>
+                            <option value="24h">A cada 24 horas</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="#E29578" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-chevron-down">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-[100px]">
+                        <input type="checkbox" id="toggle-alert" class="sr-only peer" checked>
+                        <div
+                            class="w-9 h-5 mt[20px] bg-light-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange">
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
 
     </section>
 
-    <!--- Ajuda -->
+    <!--- AJUDA -->
     <section id="help-page" class="hidden">
 
     </section>
