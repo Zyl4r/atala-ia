@@ -107,7 +107,8 @@
 
             <div class="w-full h-12.5 flex items-center justify-between gap-3 rounded-lg">
 
-                <div class="w-full h-full flex flex-col gap-0.75 bg-light-blue border border-secondary-blue items-center justify-center rounded-sm">
+                <div
+                    class="w-full h-full flex flex-col gap-0.75 bg-light-blue border border-secondary-blue items-center justify-center rounded-sm">
                     <span class="font-bold font-[Jost] text-dark-blue text-[10.5px]">Bom momento para comprar</span>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -137,24 +138,27 @@
     </section>
 
     <!--- Histórico -->
-    <section id="history-page" class="hidden">
+    <section id="history-page" class="hidden hidden overflow-y-auto">
         <div class="flex items-center gap-2 mt-[20px]">
             <div id="icon-clock" class="ml-[12px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
-                fill="none" stroke="#E29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-clock preview-icon">
-                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-                <path d="M3 3v5h5"/>
-                <path d="M12 7v5l4 2"/></svg>
-        </div>
-        <div>
-            <h1 class="text-[25px] text-dark font-semibold font-[Jost] ml-[12]">
-                Histórico
-            </h1>
-        </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#E29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-rotate-ccw-clock preview-icon">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                    <path d="M3 3v5h5" />
+                    <path d="M12 7v5l4 2" />
+                </svg>
+            </div>
+            <div>
+                <h1 class="text-[25px] text-dark font-semibold font-[Jost] ml-[12]">
+                    Histórico
+                </h1>
+            </div>
         </div>
         <div id="cards" class="flex flex-col gap-4">
-            <div id="card-aviso" class="bg-hover-orange border-dark-orange border-2 rounded-md text-off-white mt-[20px] p-6 mx-8">
-                <div id="info-h1" class="flex gap-6">
+            <div id="card-aviso"
+                class="bg-hover-orange border-dark-orange border-2 rounded-md text-off-white mt-[20px] p-6 mx-8">
+                <div id="info-h1" class="flex gap-4">
                     <h1 class="text-[20px] font-semibold font-[Jost]">3 Produtos</h1>
                     <h1 class="text-[20px] font-semibold font-[Jost]">R$350</h1>
                 </div>
@@ -164,15 +168,34 @@
                 </div>
             </div>
 
-            <div id="card-produtos" class="border-2 border-light-gray rounded-md p-6 mx-8">
-                <img src="">
-                <h2 class="text-dark text-[20px] font-[Jost] font-semibold">Nome produto</h2>
-                <h4 class="text-dark text-[12px] font-[Jost]">Loja</h4>
-                <h2 class="text-dark text-[20px] font-[Jost] font-semibold">Preço</h2>
-                <h4 class="">Desconto</h4>
+            <div id="card-produtos" class="border-2 border-light-gray rounded-md p-4 mx-8 flex flex-col gap-4">
+                <div class="flex items-center gap-3">
+                    <!--Copo stanley-->
+                    <!--shrink-0: impede que a imagem fique espremida ou diminua de tamanho quando falta espaço na linha.!-->
+                    <img src="assets/copostanley.png" class="w-20 h-20 object-cover shrink-0">
+                    <h2 class="text-dark text-[20px] font-[Jost] font-semibold">Copo Stanley</h2>
+                    <h4 class="text-dark text-[12px] font-[Jost]">Alibaba</h4>
+                    <h2 class="text-dark text-[20px] font-[Jost] font-semibold">R$200,00</h2>
+                    <h4 class="">20% nos últimos 30 dias</h4>
+
+                    <!--Fone-->
+
+                    <img src="assets/fone.png" class="w-20 h-20 object-cover shrink-0">
+                    <h2 class="text-dark text-[20px] font-[Jost] font-semibold">Sony WH-10000XM5</h2>
+                    <h4 class="text-dark text-[12px] font-[Jost]">Mercado Livre</h4>
+                    <h2 class="text-dark text-[20px] font-[Jost] font-semibold">R$500,00</h2>
+                    <h4 class="">14% nos últimos 30 dias</h4>
+
+                    <!--Tinta-->
+                    <img src="assets/tinta.png" class="w-20 h-20 object-cover shrink-0">
+                    <h2 class="text-dark text-[20px] font-[Jost] font-semibold">Tinta Guache Himi</h2>
+                    <h4 class="text-dark text-[12px] font-[Jost]">Shopee</h4>
+                    <h2 class="text-dark text-[20px] font-[Jost] font-semibold">R$700,00</h2>
+                    <h4 class="">25% nos últimos 30 dias</h4>
+                </div>
             </div>
         </div>
-        
+
     </section>
 
     <!--- Alertas -->
@@ -219,9 +242,8 @@
 
 
             <!--- Copo Stanley -->
-             <div class="flex items-center gap-3 w-full">
-                <img src="/assets/copostanley.png"
-                    alt="Copo Stanley"
+            <div class="flex items-center gap-3 w-full">
+                <img src="/assets/copostanley.png" alt="Copo Stanley"
                     class="w-22 h-22 object-cover rounded-lg border-[1px] border-light-gray shrink-0">
 
                 <div class="flex items-center justify-between w-full">
@@ -241,9 +263,8 @@
             </div>
 
             <!--- Copo Stanley -->
-             <div class="flex items-center gap-3 w-full">
-                <img src="/assets/mouse.jpg"
-                    alt="Mouse"
+            <div class="flex items-center gap-3 w-full">
+                <img src="/assets/mouse.jpg" alt="Mouse"
                     class="w-22 h-22 object-cover rounded-lg border-[1px] border-light-gray shrink-0">
 
                 <div class="flex items-center justify-between w-full">

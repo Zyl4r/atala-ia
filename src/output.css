@@ -242,41 +242,11 @@
   .mt-12\.5 {
     margin-top: calc(var(--spacing) * 12.5);
   }
-  .mt-20 {
-    margin-top: calc(var(--spacing) * 20);
-  }
-  .mt-\[0px\] {
-    margin-top: 0px;
-  }
-  .mt-\[1px\] {
-    margin-top: 1px;
-  }
   .mt-\[10px\] {
     margin-top: 10px;
   }
-  .mt-\[12\] {
-    margin-top: 12;
-  }
-  .mt-\[12px\] {
-    margin-top: 12px;
-  }
   .mt-\[20px\] {
     margin-top: 20px;
-  }
-  .mt-\[80px\] {
-    margin-top: 80px;
-  }
-  .mt-\[100px\] {
-    margin-top: 100px;
-  }
-  .mt-\[120px\] {
-    margin-top: 120px;
-  }
-  .mt-\[px\] {
-    margin-top: px;
-  }
-  .mb-6 {
-    margin-bottom: calc(var(--spacing) * 6);
   }
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
@@ -286,9 +256,6 @@
   }
   .ml-\[12px\] {
     margin-left: 12px;
-  }
-  .ml-\[18px\] {
-    margin-left: 18px;
   }
   .flex {
     display: flex;
@@ -332,8 +299,20 @@
   .h-15 {
     height: calc(var(--spacing) * 15);
   }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
   .h-22 {
     height: calc(var(--spacing) * 22);
+  }
+  .h-32 {
+    height: calc(var(--spacing) * 32);
+  }
+  .h-40 {
+    height: calc(var(--spacing) * 40);
+  }
+  .h-64 {
+    height: calc(var(--spacing) * 64);
   }
   .h-125 {
     height: calc(var(--spacing) * 125);
@@ -361,6 +340,9 @@
   }
   .w-15 {
     width: calc(var(--spacing) * 15);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
   }
   .w-22 {
     width: calc(var(--spacing) * 22);
@@ -458,8 +440,8 @@
   .gap-6 {
     gap: calc(var(--spacing) * 6);
   }
-  .rounded {
-    border-radius: 0.25rem;
+  .overflow-y-auto {
+    overflow-y: auto;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -483,10 +465,6 @@
   .border-0 {
     border-style: var(--tw-border-style);
     border-width: 0px;
-  }
-  .border-1 {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
   }
   .border-2 {
     border-style: var(--tw-border-style);
@@ -668,9 +646,6 @@
   }
   .text-light-secondary {
     color: var(--color-light-secondary);
-  }
-  .text-light-secondary-green {
-    color: var(--color-light-secondary-green);
   }
   .text-off-white {
     color: var(--color-off-white);
