@@ -5,8 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-@theme {
-    --color-white: #FFFCF7;
+:root { /* pseudclasse p valor padrao*/
+    --cor-white: #FFFCF7;
     --color-off-white: #FFF8EE;
     --color-hover-off-white: #ebd7bc;
     --color-dark-blue: #263F50;
@@ -23,4 +23,55 @@
     --color-hover-orange: #EDA58A;
     --color-blue: #5D8198;
     --color-light-gray: #C3C2B9;
+    --color-nav-fundo: #FFF8EE;
+    --color-nav-icone: #706F66;
+    --color-navbar: #5D8198;
+}
+
+.dark { /*classe p valor modo notruno*/
+    --color-off-white: #22181C;
+    --color-dark: #FFF8EE;
+    --color-gray: #FFFCF7;
+    --color-nav-fundo: #150a0e;
+    --color-nav-icone: #FFFCF7;
+    --color-nav-ativo: #E29578;
+    --color-nav-inativo: #FFFCF7;
+    --color-navbar: #150A0E;
+}
+
+/*aplica as cores do mundo escuro usando as classes que ja estao no js*/
+.dark .stroke-dark-green {
+    stroke: var(--color-nav-ativo);
+}
+
+.dark .text-dark-green {
+    color: var(--color-nav-ativo);
+}
+
+.dark .stroke-nav-icone {
+    stroke: var(--color-nav-inativo);
+}
+
+ /*esse var é tipo uma consulta, vai procurar o valor q ta na variável q muda de acordo com o tema*/
+@theme {
+    --color-white: #FFFCF7;
+    --color-off-white: var(--color-off-white);
+    --color-hover-off-white: #ebd7bc;
+    --color-dark-blue: #263F50;
+    --color-light-blue: #B9D0DC;
+    --color-secondary-blue: #6E8796;
+    --color-dark: var(--color-dark);
+    --color-secondary-off-white: #E8DFD2;
+    --color-gray: var(--color-gray);
+    --color-light-secondary: #F6E4D8;
+    --color-light-secondary-green: #E8EFE5;
+    --color-success: #43664D;
+    --color-orange: #E29578;
+    --color-dark-orange: #B26548;
+    --color-hover-orange: #EDA58A;
+    --color-blue: #5D8198;
+    --color-light-gray: #C3C2B9;
+    --color-nav-fundo: var(--color-nav-fundo);
+    --color-nav-icone: var(--color-nav-icone);
+    --color-navbar: var(--color-navbar);
 }

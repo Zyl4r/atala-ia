@@ -21,7 +21,7 @@ function switchTab(targetTabKey) {
       tab.page.classList.remove('hidden');
 
       // Aplica cor ativa (verde)
-      icon?.classList.replace('stroke-gray', 'stroke-dark-green');
+      icon?.classList.replace('stroke-nav-icone', 'stroke-dark-green');
       label?.classList.replace('text-gray', 'text-dark-green');
       label?.classList.replace('font-normal', 'font-semibold');
     } else {
@@ -29,7 +29,7 @@ function switchTab(targetTabKey) {
       tab.page.classList.add('hidden');
 
       // Restaura cor inativa (cinza)
-      icon?.classList.replace('stroke-dark-green', 'stroke-gray');
+      icon?.classList.replace('stroke-dark-green', 'stroke-nav-icone');
       label?.classList.replace('text-dark-green', 'text-gray');
       label?.classList.replace('font-semibold', 'font-normal');
     }
