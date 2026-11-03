@@ -99,9 +99,9 @@
                 </div>
 
                 <div class="w-full h-fit flex items-center justify-between">
-                    <span class="font-normal font-[Inter] text-gray text-[9px]">09 set.</span>
-                    <span class="font-normal font-[Inter] text-gray text-[9px]">24 set.</span>
-                    <span class="font-normal font-[Inter] text-gray text-[9px]">09 out.</span>
+                    <span class="font-normal font-[Inter] text-color-grafico text-[9px]">09 set.</span>
+                    <span class="font-normal font-[Inter] text-color-grafico text-[9px]">24 set.</span>
+                    <span class="font-normal font-[Inter] text-color-grafico text-[9px]">09 out.</span>
                 </div>
             </div>
 
@@ -172,7 +172,7 @@
                         <h2 class="text-dark text-[20px] font-[Jost] font-semibold">Copo Stanley</h2>
                         <h4 class="text-dark text-[12px] font-[Jost]">Alibaba</h4>
                         <h2 class="text-dark text-[20px] font-[Jost] font-semibold">R$200,00</h2>
-                        <h4 class="">20% nos últimos 30 dias</h4>
+                        <h4 class="text-dark font-[Jost]">20% nos últimos 30 dias</h4>
                     </div>
                 </div>
             </div>
@@ -184,7 +184,7 @@
                         <h2 class="text-dark text-[20px] font-[Jost] font-semibold">Sony WH-10000XM5</h2>
                         <h4 class="text-dark text-[12px] font-[Jost]">Mercado Livre</h4>
                         <h2 class="text-dark text-[20px] font-[Jost] font-semibold">R$500,00</h2>
-                        <h4 class="">14% nos últimos 30 dias</h4>
+                        <h4 class="text-dark font-[Jost]">14% nos últimos 30 dias</h4>
                     </div>
                 </div>
             </div>
@@ -196,7 +196,7 @@
                         <h2 class="text-dark text-[20px] font-[Jost] font-semibold">Tinta Guache Himi</h2>
                         <h4 class="text-dark text-[12px] font-[Jost]">Shopee</h4>
                         <h2 class="text-dark text-[20px] font-[Jost] font-semibold">R$700,00</h2>
-                        <h4 class="">25% nos últimos 30 dias</h4>
+                        <h4 class="text-dark font-[Jost]">25% nos últimos 30 dias</h4>
                     </div>
                 </div>
             </div>
@@ -359,9 +359,9 @@
                     <div class="mt-[30px] relative w-fit">
                         <select
                             class="appearance-none bg-transparent border border-light-gray rounded-xl px-2.5 py-1 pr-7 text-[11px] text-dark font-[Inter] cursor-pointer focus:outline-none">
-                            <option value="6h">A cada 6 horas</option>
-                            <option value="12h">A cada 12 horas</option>
-                            <option value="24h">A cada 24 horas</option>
+                            <option value="6h" class="bg-off-white text-dark">A cada 6 horas</option>
+                            <option value="12h" class="bg-off-white text-dark">A cada 12 horas</option>
+                            <option value="24h" class="bg-off-white text-dark">A cada 24 horas</option>
                         </select>
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
@@ -433,10 +433,10 @@
                 <div class="relative w-fit shrink-0">
                     <select
                         class="appearance-none bg-transparent border border-light-gray rounded-xl px-2.5 py-1 pr-7 text-[11px] text-dark font-[Inter] cursor-pointer focus:outline-none">
-                        <option value="real">R$ (BRL)</option>
-                        <option value="dólar">$ (USD)</option>
-                        <option value="euro">€ (EUR)</option>
-                        <option value="libra">£ (GBP)</option>
+                        <option value="real" class="bg-off-white text-dark">R$ (BRL)</option>
+                        <option value="dólar" class="bg-off-white text-dark">$ (USD)</option>
+                        <option value="euro" class="bg-off-white text-dark">€ (EUR)</option>
+                        <option value="libra" class="bg-off-white text-dark">£ (GBP)</option>
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
@@ -460,7 +460,10 @@
 
     <!--- AJUDA -->
     <section id="help-page" class="hidden">
-
+        <div id="ajuda-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-question-mark preview-icon"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                <path d="M12 17h.01"/></svg>
+        </div>
     </section>
 
     <!--- Barra de Navegação -->

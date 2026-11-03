@@ -26,6 +26,7 @@
     --color-nav-fundo: #FFF8EE;
     --color-nav-icone: #706F66;
     --color-navbar: #5D8198;
+    --color-grafico: #706F66;
 }
 
 .dark { /*classe p valor modo notruno*/
@@ -37,6 +38,7 @@
     --color-nav-ativo: #E29578;
     --color-nav-inativo: #FFFCF7;
     --color-navbar: #150A0E;
+    --color-grafico: #22181C;
 }
 
 /*aplica as cores do mundo escuro usando as classes que ja estao no js*/
@@ -74,4 +76,5 @@
     --color-nav-fundo: var(--color-nav-fundo);
     --color-nav-icone: var(--color-nav-icone);
     --color-navbar: var(--color-navbar);
+    --color-grafico: var(--color-grafico);
 }
