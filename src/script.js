@@ -155,3 +155,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tutorialModal = document.getElementById('tutorial-modal');
+    const btnCloseTutorial = document.getElementById('btn-close-tutorial');
+    const btnFinishTutorial = document.getElementById('btn-finish-tutorial');
+    const btnOpenTutorial = document.getElementById('btn-open-tutorial'); // Botão que fica nas Configurações!
+
+    // Funções de Abrir e Fechar
+    function showTutorial() {
+        if (tutorialModal) tutorialModal.classList.remove('hidden');
+    }
+
+    function hideTutorial() {
+        if (tutorialModal) tutorialModal.classList.add('hidden');
+        localStorage.setItem('hasSeenTutorial', 'true'); // Marca que a pessoa já viu
+    }
+
+    // ==========================================
+    // 1. CHECAGEM DO PRIMEIRO ACESSO
+    // ==========================================
+    const hasSeenTutorial = localStorage.getItem('hasSeenTutorial');
+    
+    // Se a chave NÃO existir, é a primeira vez! Mostra o tutorial automaticamente
+    if (!hasSeenTutorial) {
+        showTutorial();
+    }
+
+    // ==========================================
+    // 2. EVENTOS PARA FECHAR
+    // ==========================================
+    if (btnCloseTutorial) btnCloseTutorial.addEventListener('click', hideTutorial);
+    if (btnFinishTutorial) btnFinishTutorial.addEventListener('click', hideTutorial);
+
+    // ==========================================
+    // 3. REABRIR PELAS CONFIGURAÇÕES
+    // ==========================================
+    if (btnOpenTutorial) {
+        btnOpenTutorial.addEventListener('click', () => {
+            showTutorial();
+        });
+    }
+});
