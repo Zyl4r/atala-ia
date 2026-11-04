@@ -459,10 +459,178 @@
     </section>
 
     <!--- AJUDA -->
-    <section id="help-page" class="hidden">
-        <div id="ajuda-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-question-mark preview-icon"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                <path d="M12 17h.01"/></svg>
+    <section id="help-page" class="hidden overflow-y-auto">
+        <div id="ajuda-icon" class="ml-3 mt-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#e29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-circle-question-mark preview-icon">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                <path d="M12 17h.01" />
+            </svg>
+            <h1 class="text-[25px] text-dark font-semibold font-[Jost]">Como podemos ajudar?</h1>
+        </div>
+        <p class="text-gray text-[12px] font-normal font-[Inter] ml-4 mt-[1px]">Encontre respostas para aproveitar
+            melhor o Atala.IA.</p>
+
+        <div id="card-ajuda"
+            class="w-[330px] h-auto border-[1px] border-light-gray rounded-lg mx-auto mt-[10px] flex flex-col p-4 gap-3">
+
+            <div class="flex flex-col">
+
+                <!--bloco1-->
+                <div id="box-icon" class="flex items-center justify-between w-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#E29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-box preview-icon">
+                        <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 
+                   0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7
+                    4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
+                        <path d="m3.3 7 8.7 5 8.7-5" />
+                        <path d="M12 22V12" />
+                    </svg>
+
+                    <div id="info-ajuda" class="flex flex-col">
+                        <h1 class="text-[16px] text-dark font-semibold font-[Jost]">Como começar?</h1>
+                        <p class="text-gray text-[12px] font-normal font-[Inter] mt-[1px]">Aprenda a analisar seu
+                            primeiro produto.</p>
+                    </div>
+
+                    <div id="seta-icon"> <!--seta-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#c3c2b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-arrow-right preview-icon">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <hr class="border-light-gray mx-3 my-3">
+
+                <!--bloco2-->
+                <div id="icon-volta" class="flex items-center justify-between w-full gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#E29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-rotate-ccw preview-icon">
+                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                        <path d="M3 3v5h5" />
+                    </svg>
+
+                    <div id="info-ajuda" class="flex flex-col flex-1 min-w-0">
+                        <h1 class="text-[16px] text-dark font-semibold font-[Jost]">Como entender o histórico?</h1>
+                        <p class="text-gray text-[12px] font-normal font-[Inter] mt-[1px]">Descubra como acompanhar
+                            mudanças de preço.</p>
+                    </div>
+
+                    <div id="seta-icon"> <!--seta-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#c3c2b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-arrow-right preview-icon">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <hr class="border-light-gray mx-3 my-3">
+
+                <!--bloco3-->
+
+                <div id="bell-icon" class="flex items-center justify-between w-full gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#E29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-bell preview-icon">
+                        <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+                        <path
+                            d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+                    </svg>
+
+                    <div id="info-ajuda" class="flex flex-col flex-1 min-w-0">
+                        <h1 class="text-[16px] text-dark font-semibold font-[Jost]">Como configurar alertas?</h1>
+                        <p class="text-gray text-[12px] font-normal font-[Inter] mt-[1px]">Saiba como acompanhar um
+                            preço desejado.</p>
+                    </div>
+
+                    <div id="seta-icon"> <!--seta-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#c3c2b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-arrow-right preview-icon">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <hr class="border-light-gray mx-3 my-3">
+
+                <!--bloco4-->
+
+                <div id="box-ia" class="flex items-center justify-between w-full gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#E29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-cpu preview-icon">
+                        <path d="M12 20v2" />
+                        <path d="M12 2v2" />
+                        <path d="M17 20v2" />
+                        <path d="M17 2v2" />
+                        <path d="M2 12h2" />
+                        <path d="M2 17h2" />
+                        <path d="M2 7h2" />
+                        <path d="M20 12h2" />
+                        <path d="M20 17h2" />
+                        <path d="M20 7h2" />
+                        <path d="M7 20v2" />
+                        <path d="M7 2v2" />
+                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                        <rect x="8" y="8" width="8" height="8" rx="1" />
+                    </svg>
+
+                    <div id="info-ajuda" class="flex flex-col flex-1 min-w-0">
+                        <h1 class="text-[16px] text-dark font-semibold font-[Jost]">Como funciona a IA?</h1>
+                        <p class="text-gray text-[12px] font-normal font-[Inter] mt-[1px]">Entenda as análises e suas
+                            limitações.</p>
+                    </div>
+
+                    <div id="seta-icon"> <!--seta-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#c3c2b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-arrow-right preview-icon">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <hr class="border-light-gray mx-3 my-3">
+
+                <!--bloco5-->
+
+                <div id="call-icon" class="flex items-center justify-between w-full gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#E29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-phone preview-icon">
+                        <path
+                            d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                    </svg>
+
+                    <div id="info-ajuda" class="flex flex-col flex-1 min-w-0">
+                        <h1 class="text-[16px] text-dark font-semibold font-[Jost]">Alguma dúvida que não está aqui?</h1>
+                        <p class="text-gray text-[12px] font-normal font-[Inter] mt-[1px]">Chame nosso suporte clicando na seta.</p>
+                    </div>
+
+                    <div id="seta-icon"> <!--seta-->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#c3c2b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-arrow-right preview-icon">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
