@@ -27,6 +27,9 @@ Como funciona:
   histórico **simulado** de um produto com `python seed.py --url "<url do produto>"` no backend.
 - Para testar só o visual sem instalar a extensão, abra o `popup.html` por um servidor local
   passando um produto na URL, ex.: `popup.html?titulo=Fone&preco=199.90&preco_original=259.90`.
+  Acrescente `&api=http://127.0.0.1:8000` para usar o backend local em vez do servidor.
+- Produtos vistos pela primeira vez ganham **30 dias de histórico simulado** no backend, para a
+  apresentação. A extensão avisa e desenha essa parte do gráfico tracejada.
 
 ---
 

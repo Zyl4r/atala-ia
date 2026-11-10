@@ -139,7 +139,9 @@ async function renderizarAnalise(detalhe) {
 
   el('produto-motivos').innerHTML = analise.motivos.map((m) => `<li>${escapar(m)}</li>`).join('');
   el('produto-base').textContent = {
-    historico: `Baseado em ${e.pontos_no_historico} preços dos últimos 30 dias.`,
+    historico: analise.historico_simulado
+      ? 'Histórico SIMULADO para demonstração (linha tracejada no gráfico).'
+      : `Baseado em ${e.pontos_no_historico} preços dos últimos 30 dias.`,
     desconto_da_pagina: 'Baseado no desconto anunciado pela loja (ainda sem histórico).',
     sem_dados: '',
   }[analise.base] || '';
@@ -162,13 +164,23 @@ function desenharGrafico(pontos) {
   const [pMin, pMax] = [Math.min(...precos), Math.max(...precos)];
   const x = (t) => (t1 === t0 ? L / 2 : ((t - t0) / (t1 - t0)) * L);
   const y = (p) => (pMax === pMin ? A / 2 : margem + (1 - (p - pMin) / (pMax - pMin)) * (A - 2 * margem));
-  const linha = pontos.map((_, i) => `${x(tempos[i]).toFixed(1)},${y(precos[i]).toFixed(1)}`).join(' ');
+  const coordenada = (i) => `${x(tempos[i]).toFixed(1)},${y(precos[i]).toFixed(1)}`;
+
+  // Preços simulados (para demonstração) ficam tracejados; os reais, em linha cheia.
+  // O primeiro ponto real entra nos dois trechos para a linha não ficar quebrada.
+  const primeiroReal = pontos.findIndex((p) => !p.simulado);
+  const indices = pontos.map((_, i) => i);
+  const simulados = primeiroReal === -1 ? indices : indices.slice(0, primeiroReal + 1);
+  const reais = primeiroReal === -1 ? [] : indices.slice(primeiroReal);
+  const trecho = (lista, extra) => (lista.length < 2 ? '' : `
+      <polyline points="${lista.map(coordenada).join(' ')}" fill="none" stroke="#E29578" stroke-width="2"
+        stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke" ${extra}/>`);
 
   area.innerHTML = `
     <svg viewBox="0 0 ${L} ${A}" preserveAspectRatio="none" class="w-full h-full overflow-visible">
       <line x1="0" y1="${A / 2}" x2="${L}" y2="${A / 2}" stroke="#E8DFD2" stroke-width="1" vector-effect="non-scaling-stroke"/>
-      <polyline points="${linha}" fill="none" stroke="#E29578" stroke-width="2"
-        stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+      ${trecho(simulados, 'stroke-dasharray="4 3" opacity="0.7"')}
+      ${trecho(reais, '')}
     </svg>`;
 
   const formatarDia = (t) => {
