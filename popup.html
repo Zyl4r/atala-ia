@@ -26,7 +26,7 @@
                     d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z" />
             </svg>
             <div class="w-full h-fit flex flex-col gap-1">
-                <h1 class="text-dark text-[20px] text-center font-medium font-[Jost] mt-2.5">Sua próxima compra
+                <h1 id="home-titulo" class="text-dark text-[20px] text-center font-medium font-[Jost] mt-2.5">Sua próxima compra
                     começa aqui.
                 </h1>
 
@@ -44,20 +44,19 @@
     </section>
 
     <!--- PRODUTO -->
-    <section id="product-page" class="hidden">
+    <section id="product-page" class="hidden pb-14">
         <div class="w-full h-full flex justify-center items-start flex-col px-4.5 py-3.5 gap-3">
             <div class="w-full h-fit flex flex-col gap-1.75">
                 <h1 class="text-gray text-[10px] font-semibold font-[Inter]">ANÁLISE DE PRODUTO</h1>
 
                 <div class="w-full h-fit flex gap-3">
-                    <img src="https://images.unsplash.com/photo-1545127398-14699f92334b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
-                        alt="" class="w-15 h-13.5 object-cover rounded-lg">
+                    <img id="produto-imagem" src="assets/logo-header.png" alt=""
+                        class="w-15 h-13.5 object-cover rounded-lg bg-white shrink-0">
 
-                    <div class="w-full h-fit flex flex-col gap-1">
-                        <span class="text-dark text-[13px] font-semibold font-[Inter]">Fone de ouvido bluetooth</span>
-                        <span class="text-gray text-[10px] font-semibold font-[Inter]">Fone sem fio - Dourado - Mercado
-                            Livre</span>
-                        <div class="w-fit h-fit flex items-center gap-1">
+                    <div class="w-full h-fit flex flex-col gap-1 min-w-0">
+                        <span id="produto-titulo" class="text-dark text-[13px] font-semibold font-[Inter] line-clamp-2"></span>
+                        <span id="produto-loja" class="text-gray text-[10px] font-semibold font-[Inter]"></span>
+                        <div id="produto-alerta-badge" class="hidden w-fit h-fit flex items-center gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
                                 stroke-linejoin="round" class="stroke-orange">
@@ -74,53 +73,42 @@
             <div class="w-full h-fit flex justify-between">
                 <div class="w-fit h-fit flex flex-col gap-0.5">
                     <span class="text-gray font-[Inter] text-[10px]">Preço atual</span>
-                    <span class="text-dark font-[Inter] font-semibold text-[25px]">R$ 399,90</span>
+                    <span id="produto-preco" class="text-dark font-[Inter] font-semibold text-[25px]"></span>
                 </div>
 
                 <div class="w-fit h-fit flex flex-col items-end gap-1.25">
-                    <div class="w-fit h-fit px-2 py-1 bg-light-blue rounded-full border border-secondary-blue">
-                        <span class="text-dark-blue text-[11px] font-[Inter] font-normal">↓ 14% no mês</span>
+                    <div id="produto-variacao" class="hidden">
+                        <span id="produto-variacao-texto" class="text-[11px] font-[Inter] font-normal"></span>
                     </div>
 
-                    <span class="text-gray font-[Inter] text-[9px]">Atualizado há 32 minutos</span>
+                    <span id="produto-atualizado" class="text-gray font-[Inter] text-[9px]"></span>
                 </div>
             </div>
 
             <div class="w-full h-fit rounded-xl bg-white border border-secondary-off-white p-2.5 flex flex-col gap-1.5">
                 <div class="w-full h-fit flex items-center justify-between">
                     <span class="font-semibold font-[Inter] text-dark-green text-[11px]">Últimos 30 dias</span>
-                    <span class="font-normal font-[Inter] text-gray text-[9px]">Mín. R$319,99</span>
+                    <span id="produto-minimo" class="font-normal font-[Inter] text-[#706F66] text-[9px]"></span>
                 </div>
 
-                <div class="w-full h-13.75 flex flex-col gap-4.5 py-2">
-                    <div class="w-full h-px bg-secondary-off-white"></div>
-                    <div class="w-full h-px bg-secondary-off-white"></div>
-                    <div class="w-full h-px bg-secondary-off-white"></div>
-                </div>
+                <div id="produto-grafico" class="w-full h-13.75"></div>
 
                 <div class="w-full h-fit flex items-center justify-between">
-                    <span class="font-normal font-[Inter] text-gray text-[9px]">09 set.</span>
-                    <span class="font-normal font-[Inter] text-gray text-[9px]">24 set.</span>
-                    <span class="font-normal font-[Inter] text-gray text-[9px]">09 out.</span>
+                    <span id="grafico-data-inicio" class="font-normal font-[Inter] text-[#706F66] text-[9px]"></span>
+                    <span id="grafico-data-meio" class="font-normal font-[Inter] text-[#706F66] text-[9px]"></span>
+                    <span id="grafico-data-fim" class="font-normal font-[Inter] text-[#706F66] text-[9px]"></span>
                 </div>
             </div>
 
             <div class="w-full h-12.5 flex items-center justify-between gap-3 rounded-lg">
 
-                <div
-                    class="w-full h-full flex flex-col gap-0.75 bg-light-blue border border-secondary-blue items-center justify-center rounded-sm">
-                    <span class="font-bold font-[Jost] text-dark-blue text-[10.5px]">Bom momento para comprar</span>
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        class="stroke-dark-blue">
-                        <path
-                            d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" />
-                        <path d="m16 9-5.5 5.5L8 12" />
-                    </svg>
+                <div id="produto-veredito"
+                    class="w-full h-full flex flex-col gap-0.5 border items-center justify-center rounded-sm px-1">
+                    <span id="produto-veredito-titulo" class="font-bold font-[Jost] text-[11px] text-center"></span>
+                    <span id="produto-confianca" class="font-[Inter] text-[9px]"></span>
                 </div>
 
-                <button
+                <button id="btn-ver-analises"
                     class="w-full h-full rounded-lg bg-orange border border-dark-orange flex justify-center items-center gap-1.75 font-[Inter] transition-all duration-300 hover:cursor-pointer hover:bg-hover-orange">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -133,13 +121,29 @@
                 </button>
             </div>
 
+            <div class="w-full flex flex-col gap-1">
+                <span class="text-gray text-[10px] font-semibold font-[Inter]">POR QUÊ?</span>
+                <ul id="produto-motivos" class="list-disc pl-4 flex flex-col gap-0.5 text-dark text-[11px] font-[Inter]"></ul>
+                <p id="produto-base" class="text-gray text-[9px] italic font-[Inter]"></p>
+            </div>
 
+            <div class="w-full flex flex-col gap-1 pb-2">
+                <span class="text-gray text-[10px] font-semibold font-[Inter]">CRIAR ALERTA</span>
+                <div class="w-full flex items-center gap-2">
+                    <span class="text-dark text-[11px] font-[Inter] shrink-0">Avisar quando chegar a R$</span>
+                    <input id="input-preco-alvo" type="number" min="0" step="0.01" placeholder="0,00"
+                        class="w-full min-w-0 border border-light-gray rounded-lg px-2 py-1 text-[11px] text-dark bg-transparent font-[Inter] focus:outline-none focus:border-orange">
+                    <button id="btn-criar-alerta"
+                        class="shrink-0 rounded-lg bg-orange px-2.5 py-1 text-[11px] text-off-white font-semibold font-[Inter] hover:bg-hover-orange hover:cursor-pointer transition-all">Criar</button>
+                </div>
+                <p id="produto-alerta-msg" class="text-gray text-[10px] font-[Inter]"></p>
+            </div>
         </div>
     </section>
 
     <!--- HISTÓRICO -->
-    <section id="history-page" class="hidden overflow-y-auto">
-        <div id="icon-clock" class="ml-[12px] mt-[20px]">
+    <section id="history-page" class="hidden overflow-y-auto pb-14">
+        <div id="icon-clock" class="ml-3 mt-5">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
                 stroke="#E29578" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="lucide lucide-rotate-ccw-clock preview-icon">
@@ -149,62 +153,26 @@
             </svg>
         </div>
         <h1 class="text-[25px] text-dark font-semibold font-[Jost] ml-[45px] mt-[-35px]">Histórico</h1>
-        <div id="cards" class="flex flex-col gap-4">
+        <div id="cards" class="flex flex-col gap-4 pb-4">
             <div id="card-aviso"
                 class="bg-hover-orange border-dark-orange border-2 rounded-md text-off-white mt-[20px] p-6 mx-8">
                 <div id="info-h1" class="flex gap-4">
-                    <h1 class="text-[20px] font-semibold font-[Jost]">3 Produtos</h1>
-                    <h1 class="text-[20px] font-semibold font-[Jost]">R$350</h1>
+                    <h1 id="resumo-qtd" class="text-[20px] font-semibold font-[Jost]">0 Produtos</h1>
+                    <h1 id="resumo-economia" class="text-[20px] font-semibold font-[Jost]">R$ 0,00</h1>
                 </div>
                 <div id="info-h3" class="flex gap-4">
-                    <h3 class="text-[14px] font-normal font-[Jost]">analisados está semana</h3>
+                    <h3 class="text-[14px] font-normal font-[Jost]">analisados esta semana</h3>
                     <h3 class="text-[14px] font-normal font-[Jost]">de queda identificada</h3>
                 </div>
             </div>
 
-            <div id="card-produtos" class="border-2 border-light-gray rounded-md p-2 mx-8 flex flex-col gap-2">
-                <div class="flex items-center gap-3">
-
-                    <!--Copo stanley-->
-                    <!--shrink-0: impede que a imagem fique espremida ou diminua de tamanho quando falta espaço na linha.!-->
-                    <img src="assets/copostanley.png" class="w-20 h-20 object-cover shrink-0">
-                    <div class="flex flex-col">
-                        <h2 class="text-dark text-[20px] font-[Jost] font-semibold">Copo Stanley</h2>
-                        <h4 class="text-dark text-[12px] font-[Jost]">Alibaba</h4>
-                        <h2 class="text-dark text-[20px] font-[Jost] font-semibold">R$200,00</h2>
-                        <h4 class="">20% nos últimos 30 dias</h4>
-                    </div>
-                </div>
-            </div>
-            <!--Fone-->
-            <div id="card-produtos" class="border-2 border-light-gray rounded-md p-2 mx-8 flex flex-col gap-2">
-                <div class="flex items-center gap-3">
-                    <img src="assets/fone.png" class="w-20 h-20 object-cover shrink-0">
-                    <div class="flex flex-col">
-                        <h2 class="text-dark text-[20px] font-[Jost] font-semibold">Sony WH-10000XM5</h2>
-                        <h4 class="text-dark text-[12px] font-[Jost]">Mercado Livre</h4>
-                        <h2 class="text-dark text-[20px] font-[Jost] font-semibold">R$500,00</h2>
-                        <h4 class="">14% nos últimos 30 dias</h4>
-                    </div>
-                </div>
-            </div>
-            <!--Tinta-->
-            <div id="card-produtos" class="border-2 border-light-gray rounded-md p-2 mx-8 flex flex-col gap-2">
-                <div class="flex items-center gap-3">
-                    <img src="assets/tinta.png" class="w-20 h-20 object-cover shrink-0">
-                    <div class="flex flex-col">
-                        <h2 class="text-dark text-[20px] font-[Jost] font-semibold">Tinta Guache Himi</h2>
-                        <h4 class="text-dark text-[12px] font-[Jost]">Shopee</h4>
-                        <h2 class="text-dark text-[20px] font-[Jost] font-semibold">R$700,00</h2>
-                        <h4 class="">25% nos últimos 30 dias</h4>
-                    </div>
-                </div>
-            </div>
-
+            <!-- Preenchido pelo app.js com os produtos vindos da API -->
+            <div id="historico-lista" class="flex flex-col gap-4"></div>
+        </div>
     </section>
 
     <!--- ALERTAS -->
-    <section id="alerts-page" class="hidden">
+    <section id="alerts-page" class="hidden pb-14">
         <div class="flex items-center gap-2 mt-[20px]">
             <div id="icon-bel" class=" ml-[12px]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none"
@@ -220,75 +188,9 @@
             <h1 class="text-[25px] text-dark font-semibold font-[Jost]"> Seus alertas </h1>
         </div>
 
-        <!--- Fone -->
-        <div
-            class="w-[330px] h-auto border-[1px] border-light-gray rounded-lg mx-auto mt-[10px] flex flex-col p-3 gap-3">
-
-            <div class="flex items-center gap-3 w-full">
-                <img src="https://images.unsplash.com/photo-1545127398-14699f92334b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
-                    alt="Fone de ouvido"
-                    class="w-22 h-22 object-cover rounded-lg border-[1px] border-light-gray shrink-0">
-
-                <div class="flex items-center justify-between w-full">
-                    <div class="flex flex-col gap-0.5">
-                        <h2 class="text-dark text-[14px] font-semibold font-[Inter]">Fone de ouvido bluetooth</h2>
-                        <p class="text-gray text-[11px] font-normal font-[Inter]">Preço atual: R$399,90</p>
-                        <p class="text-gray text-[11px] font-normal font-[Inter]">Avisar quando chegar a: R$250,00</p>
-                    </div>
-
-                    <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-2">
-                        <input type="checkbox" id="toggle-alert" class="sr-only peer" checked>
-                        <div
-                            class="w-9 h-5 bg-light-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange">
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-
-            <!--- Copo Stanley -->
-            <div class="flex items-center gap-3 w-full">
-                <img src="/assets/copostanley.png" alt="Copo Stanley"
-                    class="w-22 h-22 object-cover rounded-lg border-[1px] border-light-gray shrink-0">
-
-                <div class="flex items-center justify-between w-full">
-                    <div class="flex flex-col gap-0.5">
-                        <h2 class="text-dark text-[14px] font-semibold font-[Inter]">Copo Stanley</h2>
-                        <p class="text-gray text-[11px] font-normal font-[Inter]">Preço atual: R$200,00</p>
-                        <p class="text-gray text-[11px] font-normal font-[Inter]">Avisar quando chegar a: R$150,00</p>
-                    </div>
-
-                    <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-2">
-                        <input type="checkbox" id="toggle-alert" class="sr-only peer" checked>
-                        <div
-                            class="w-9 h-5 bg-light-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange">
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-            <!--- Mouse -->
-            <div class="flex items-center gap-3 w-full">
-                <img src="/assets/mouse.jpg" alt="Mouse"
-                    class="w-22 h-22 object-cover rounded-lg border-[1px] border-light-gray shrink-0">
-
-                <div class="flex items-center justify-between w-full">
-                    <div class="flex flex-col gap-0.5">
-                        <h2 class="text-dark text-[14px] font-semibold font-[Inter]">Mouse Classic Box</h2>
-                        <p class="text-gray text-[11px] font-normal font-[Inter]">Preço atual: R$15,00</p>
-                        <p class="text-gray text-[11px] font-normal font-[Inter]">Avisar quando chegar a: R$10,00</p>
-                    </div>
-
-                    <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-2">
-                        <input type="checkbox" id="toggle-alert" class="sr-only peer" checked>
-                        <div
-                            class="w-9 h-5 bg-light-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange">
-                        </div>
-                    </label>
-                </div>
-            </div>
-
-        </div>
+        <!-- Preenchido pelo app.js com os alertas vindos da API -->
+        <div id="alertas-lista"
+            class="w-[330px] h-auto border-[1px] border-light-gray rounded-lg mx-auto mt-[10px] mb-4 flex flex-col p-3 gap-3">
         </div>
     </section>
 
@@ -327,13 +229,13 @@
 
                 <div class="flex flex-col gap-9">
                     <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-2 mt-[20px]">
-                        <input type="checkbox" id="toggle-alert" class="sr-only peer" checked>
+                        <input type="checkbox" id="pref-alerta-queda" class="sr-only peer" checked>
                         <div
                             class="w-9 h-5 mt[20px] bg-light-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange">
                         </div>
                     </label>
                     <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-2">
-                        <input type="checkbox" id="toggle-alert" class="sr-only peer" checked>
+                        <input type="checkbox" id="pref-resumo-semanal" class="sr-only peer" checked>
                         <div
                             class="w-9 h-5 mt[20px] bg-light-gray peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-orange">
                         </div>
@@ -357,7 +259,7 @@
 
                 <div class="flex flex-col items-end gap-7 shrink-0">
                     <div class="mt-[30px] relative w-fit">
-                        <select
+                        <select id="pref-intervalo"
                             class="appearance-none bg-transparent border border-light-gray rounded-xl px-2.5 py-1 pr-7 text-[11px] text-dark font-[Inter] cursor-pointer focus:outline-none">
                             <option value="6h">A cada 6 horas</option>
                             <option value="12h">A cada 12 horas</option>
@@ -431,12 +333,12 @@
                     <p class="text-dark text-[13px] font-semibold font-[Inter]">Moeda padrão</p>
                 </div>
                 <div class="relative w-fit shrink-0">
-                    <select
+                    <select id="pref-moeda"
                         class="appearance-none bg-transparent border border-light-gray rounded-xl px-2.5 py-1 pr-7 text-[11px] text-dark font-[Inter] cursor-pointer focus:outline-none">
-                        <option value="real">R$ (BRL)</option>
-                        <option value="dólar">$ (USD)</option>
-                        <option value="euro">€ (EUR)</option>
-                        <option value="libra">£ (GBP)</option>
+                        <option value="BRL">R$ (BRL)</option>
+                        <option value="USD">$ (USD)</option>
+                        <option value="EUR">€ (EUR)</option>
+                        <option value="GBP">£ (GBP)</option>
                     </select>
                     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
@@ -536,66 +438,11 @@
         </div>
     </nav>
 
-    <!-- TUTORIAL -->
-    <section id="tutorial-modal"
-        class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 hidden">
-        <div
-            class="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-
-            <!-- Botão Fechar -->
-            <button id="btn-close-tutorial"
-                class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-lg">✕</button>
-
-            <!-- 1 -->
-            <div class="tutorial-step text-center">
-                <div class="text-4xl mb-3"></div>
-                <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Bem-vinda ao Atala.IA!</h2>
-                <p class="text-sm text-gray-600 dark:text-gray-300 mb-6">
-                    Vamos te mostrar rapidinho como aproveitar ao máximo a extensão.
-                </p>
-            </div>
-
-            <!-- 2 -->
-            <div class="tutorial-step text-center hidden">
-                <div class="text-4xl mb-3"></div>
-                <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Ajuste de Fontes</h2>
-                <p class="text-sm text-gray-600 dark:text-gray-300 mb-6">
-                    Nas configurações você pode aumentar ou diminuir o texto sem quebrar o layout!
-                </p>
-            </div>
-
-            <!-- 3  -->
-            <div class="tutorial-step text-center hidden">
-                <div class="text-4xl mb-3"></div>
-                <h2 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Modo Escuro</h2>
-                <p class="text-sm text-gray-600 dark:text-gray-300 mb-6">
-                    Alterne entre o tema claro e escuro a qualquer momento com um único clique.
-                </p>
-            </div>
-
-            <!-- Botões de navegação -->
-            <div class="flex items-center justify-between mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-                <button id="btn-prev-tutorial"
-                    class="text-sm font-medium text-gray-500 hover:text-gray-800 dark:hover:text-white invisible">
-                    Voltar
-                </button>
-
-                <!-- Indicadores de bolinha -->
-                <div id="tutorial-dots" class="flex gap-1.5">
-                    <span class="w-2.5 h-2.5 rounded-full bg-orange"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-gray-300 dark:bg-gray-600"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-gray-300 dark:bg-gray-600"></span>
-                </div>
-
-                <button id="btn-next-tutorial"
-                    class="rounded-lg bg-orange px-4 py-2 text-sm text-white font-medium hover:opacity-90 transition">
-                    Avançar
-                </button>
-            </div>
-
-        </div>
-    </section>
+    <script src="src/config.js"></script>
+    <script src="src/extrator.js"></script>
+    <script src="src/api.js"></script>
     <script src="src/script.js"></script>
+    <script src="src/app.js"></script>
 </body>
 
 </html>

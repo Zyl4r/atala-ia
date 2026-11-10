@@ -1,9 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Atala.ia",
-  "description": "Vigia de preço apenas",
-  "version": "1.0",
+  "description": "Analisa o preço do produto que você está vendo e diz se é hora de comprar ou de esperar.",
+  "version": "1.1",
   "action": {
     "default_popup": "popup.html"
-  }
+  },
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*",
+    "https://*.onrender.com/*"
+  ]
 }

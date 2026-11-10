@@ -1,5 +1,35 @@
 # Instruções do Projeto
 
+## Testar a extensão com o backend
+
+A análise de preços vem do backend ([atala-ia-back](https://github.com/AnaBia-31/atala-ia-back)).
+Para testar tudo junto no seu computador:
+
+1. **Suba o backend** (na pasta do atala-ia-back, seguindo o README de lá):
+
+```bash
+uvicorn app.main:app --reload
+```
+
+2. **Carregue a extensão no Chrome:** abra `chrome://extensions`, ligue o **Modo do desenvolvedor**,
+   clique em **Carregar sem compactação** e escolha esta pasta. Depois de mudar algum arquivo,
+   clique no botão de recarregar da extensão.
+3. **Abra uma página de produto** (Amazon, Mercado Livre, KaBuM...) e clique no ícone do Atala.IA.
+
+Como funciona:
+- `src/extrator.js` lê título, preço, preço riscado e imagem da página aberta.
+- `src/app.js` manda esses dados para a API e mostra a análise, o gráfico, o Histórico e os Alertas.
+- `src/api.js` faz as chamadas à API. O endereço dela fica em `src/config.js`.
+- A extensão **não tem login** (o login é só do app mobile). O Histórico, os Alertas e os Ajustes
+  ficam guardados no próprio navegador (`chrome.storage`); os preços atuais vêm da API.
+- Na primeira vez que um produto é aberto ainda não há histórico. Se a loja mostra um preço
+  riscado ("de R$ X por R$ Y"), a análise usa esse desconto. Para a apresentação, dá para gerar um
+  histórico **simulado** de um produto com `python seed.py --url "<url do produto>"` no backend.
+- Para testar só o visual sem instalar a extensão, abra o `popup.html` por um servidor local
+  passando um produto na URL, ex.: `popup.html?titulo=Fone&preco=199.90&preco_original=259.90`.
+
+---
+
 ## Como Executar na Escola (Rotina Padrão)
 
 ### 1. Permissão do PowerShell
