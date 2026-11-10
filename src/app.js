@@ -149,47 +149,166 @@ async function renderizarAnalise(detalhe) {
   api.historicoPrecos(produto.id).then(desenharGrafico).catch(() => desenharGrafico([]));
 }
 
+// ---------------------------------------------------------------------
+// GRÁFICO "ÚLTIMOS 30 DIAS"
+// - Passe o mouse: mostra o preço daquele dia.
+// - Role o scroll em cima do gráfico: zoom (centrado no mouse).
+// - Clique duas vezes: volta ao período inteiro.
+// ---------------------------------------------------------------------
+const grafico = { pontos: [], tempos: [], tMin: 0, tMax: 0, ini: 0, fim: 0, pMin: 0, pMax: 0 };
+const GRAFICO_L = 300, GRAFICO_A = 55, GRAFICO_MARGEM = 4;
+const UM_DIA = 24 * 60 * 60 * 1000;
+
+function formatarDia(t) {
+  const d = new Date(t);
+  return `${String(d.getDate()).padStart(2, '0')} ${d.toLocaleDateString('pt-BR', { month: 'short' })}`;
+}
+
 function desenharGrafico(pontos) {
   const area = el('produto-grafico');
-  const rotulos = ['grafico-data-inicio', 'grafico-data-meio', 'grafico-data-fim'];
-  if (!pontos || pontos.length < 2) {
+  grafico.pontos = pontos && pontos.length >= 2 ? pontos : [];
+  if (!grafico.pontos.length) {
     area.innerHTML = '<p class="text-[10px] text-[#706F66] font-[Inter] text-center pt-4">Ainda sem histórico para o gráfico</p>';
-    rotulos.forEach((id) => { el(id).textContent = ''; });
+    ['grafico-data-inicio', 'grafico-data-meio', 'grafico-data-fim'].forEach((id) => { el(id).textContent = ''; });
     return;
   }
-  const L = 300, A = 55, margem = 4;
-  const tempos = pontos.map((p) => dataDaApi(p.coletado_em).getTime());
-  const precos = pontos.map((p) => p.preco);
-  const [t0, t1] = [Math.min(...tempos), Math.max(...tempos)];
-  const [pMin, pMax] = [Math.min(...precos), Math.max(...precos)];
-  const x = (t) => (t1 === t0 ? L / 2 : ((t - t0) / (t1 - t0)) * L);
-  const y = (p) => (pMax === pMin ? A / 2 : margem + (1 - (p - pMin) / (pMax - pMin)) * (A - 2 * margem));
-  const coordenada = (i) => `${x(tempos[i]).toFixed(1)},${y(precos[i]).toFixed(1)}`;
+  grafico.tempos = pontos.map((p) => dataDaApi(p.coletado_em).getTime());
+  grafico.tMin = Math.min(...grafico.tempos);
+  grafico.tMax = Math.max(...grafico.tempos);
+  grafico.ini = grafico.tMin;
+  grafico.fim = grafico.tMax;
+  renderizarGrafico();
+}
+
+// Índices dos pontos dentro da janela de zoom (mais um de cada lado, para a linha chegar às bordas).
+function janelaDoGrafico() {
+  const { tempos, ini, fim } = grafico;
+  const dentro = tempos.map((t, i) => i).filter((i) => tempos[i] >= ini && tempos[i] <= fim);
+  const primeiro = dentro.length ? dentro[0] : tempos.findIndex((t) => t > ini);
+  const ultimo = dentro.length ? dentro[dentro.length - 1] : Math.max(primeiro - 1, 0);
+  return {
+    dentro: dentro.length ? dentro : [primeiro, ultimo],
+    de: Math.max(0, primeiro - 1),
+    ate: Math.min(tempos.length - 1, ultimo + 1),
+  };
+}
+
+const xDoGrafico = (t) => (grafico.fim === grafico.ini ? 0.5 : (t - grafico.ini) / (grafico.fim - grafico.ini));
+const yDoGrafico = (p) => (grafico.pMax === grafico.pMin
+  ? 0.5
+  : (GRAFICO_MARGEM + (1 - (p - grafico.pMin) / (grafico.pMax - grafico.pMin)) * (GRAFICO_A - 2 * GRAFICO_MARGEM)) / GRAFICO_A);
+
+function renderizarGrafico() {
+  const area = el('produto-grafico');
+  const { pontos, tempos, ini, fim } = grafico;
+  const { dentro, de, ate } = janelaDoGrafico();
+
+  // A escala vertical se ajusta aos preços visíveis, para o zoom mostrar a variação.
+  const precosVisiveis = dentro.map((i) => pontos[i].preco);
+  grafico.pMin = Math.min(...precosVisiveis);
+  grafico.pMax = Math.max(...precosVisiveis);
+
+  const indices = [];
+  for (let i = de; i <= ate; i++) indices.push(i);
+  const coordenada = (i) =>
+    `${(xDoGrafico(tempos[i]) * GRAFICO_L).toFixed(1)},${(yDoGrafico(pontos[i].preco) * GRAFICO_A).toFixed(1)}`;
 
   // Preços simulados (para demonstração) ficam tracejados; os reais, em linha cheia.
   // O primeiro ponto real entra nos dois trechos para a linha não ficar quebrada.
-  const primeiroReal = pontos.findIndex((p) => !p.simulado);
-  const indices = pontos.map((_, i) => i);
-  const simulados = primeiroReal === -1 ? indices : indices.slice(0, primeiroReal + 1);
-  const reais = primeiroReal === -1 ? [] : indices.slice(primeiroReal);
+  const primeiroReal = indices.find((i) => !pontos[i].simulado);
+  const simulados = primeiroReal === undefined ? indices : indices.filter((i) => i <= primeiroReal);
+  const reais = primeiroReal === undefined ? [] : indices.filter((i) => i >= primeiroReal);
   const trecho = (lista, extra) => (lista.length < 2 ? '' : `
       <polyline points="${lista.map(coordenada).join(' ')}" fill="none" stroke="#E29578" stroke-width="2"
         stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke" ${extra}/>`);
 
+  const comZoom = fim - ini < grafico.tMax - grafico.tMin - 1000;
   area.innerHTML = `
-    <svg viewBox="0 0 ${L} ${A}" preserveAspectRatio="none" class="w-full h-full overflow-visible">
-      <line x1="0" y1="${A / 2}" x2="${L}" y2="${A / 2}" stroke="#E8DFD2" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    <svg viewBox="0 0 ${GRAFICO_L} ${GRAFICO_A}" preserveAspectRatio="none" style="width:100%;height:100%;overflow:hidden;display:block">
+      <line x1="0" y1="${GRAFICO_A / 2}" x2="${GRAFICO_L}" y2="${GRAFICO_A / 2}" stroke="#E8DFD2" stroke-width="1" vector-effect="non-scaling-stroke"/>
       ${trecho(simulados, 'stroke-dasharray="4 3" opacity="0.7"')}
       ${trecho(reais, '')}
-    </svg>`;
+    </svg>
+    <div data-cursor="linha" style="position:absolute;top:0;bottom:0;width:1px;background:#C3C2B9;display:none;pointer-events:none"></div>
+    <div data-cursor="ponto" style="position:absolute;width:8px;height:8px;border-radius:50%;background:#E29578;border:2px solid #fff;box-shadow:0 0 0 1px #B26548;transform:translate(-50%,-50%);display:none;pointer-events:none"></div>
+    <div data-cursor="dica" style="position:absolute;transform:translate(-50%,-100%);background:#22181C;color:#FFF8EE;font:600 10px Inter,sans-serif;padding:3px 7px;border-radius:6px;white-space:nowrap;display:none;pointer-events:none;z-index:10"></div>
+    ${comZoom ? '<span style="position:absolute;right:0;bottom:-2px;font:9px Inter,sans-serif;color:#706F66;pointer-events:none">2 cliques: ver tudo</span>' : ''}`;
 
-  const formatarDia = (t) => {
-    const d = new Date(t);
-    return `${String(d.getDate()).padStart(2, '0')} ${d.toLocaleDateString('pt-BR', { month: 'short' })}`;
-  };
-  el('grafico-data-inicio').textContent = formatarDia(t0);
-  el('grafico-data-meio').textContent = formatarDia((t0 + t1) / 2);
-  el('grafico-data-fim').textContent = formatarDia(t1);
+  el('grafico-data-inicio').textContent = formatarDia(ini);
+  el('grafico-data-meio').textContent = formatarDia((ini + fim) / 2);
+  el('grafico-data-fim').textContent = formatarDia(fim);
+}
+
+function mostrarPrecoDoMouse(evento) {
+  if (!grafico.pontos.length) return;
+  const area = el('produto-grafico');
+  const caixa = area.getBoundingClientRect();
+  const fracao = Math.min(Math.max((evento.clientX - caixa.left) / caixa.width, 0), 1);
+  const tMouse = grafico.ini + fracao * (grafico.fim - grafico.ini);
+
+  // Ponto visível mais próximo do mouse.
+  const { dentro } = janelaDoGrafico();
+  const i = dentro.reduce((melhor, j) =>
+    (Math.abs(grafico.tempos[j] - tMouse) < Math.abs(grafico.tempos[melhor] - tMouse) ? j : melhor), dentro[0]);
+  const ponto = grafico.pontos[i];
+  const xPx = xDoGrafico(grafico.tempos[i]) * caixa.width;
+  const yPx = yDoGrafico(ponto.preco) * caixa.height;
+
+  const [linha, marcador, dica] = ['linha', 'ponto', 'dica'].map((nome) => area.querySelector(`[data-cursor="${nome}"]`));
+  linha.style.left = `${xPx}px`;
+  marcador.style.left = `${xPx}px`;
+  marcador.style.top = `${yPx}px`;
+  marcador.style.borderStyle = ponto.simulado ? 'dashed' : 'solid';
+  dica.textContent = `${formatarDia(grafico.tempos[i])} · ${formatarPreco(ponto.preco, estado.detalhe?.produto.moeda)}${ponto.simulado ? ' (simulado)' : ''}`;
+  [linha, marcador, dica].forEach((elemento) => { elemento.style.display = 'block'; });
+
+  // Mantém a dica dentro do gráfico (não corta nas bordas).
+  const metade = dica.offsetWidth / 2;
+  dica.style.left = `${Math.min(Math.max(xPx, metade), caixa.width - metade)}px`;
+  dica.style.top = `${Math.max(yPx - 8, 0)}px`;
+}
+
+function esconderPrecoDoMouse() {
+  el('produto-grafico').querySelectorAll('[data-cursor]').forEach((elemento) => { elemento.style.display = 'none'; });
+}
+
+function zoomComScroll(evento) {
+  if (!grafico.pontos.length) return;
+  const total = grafico.tMax - grafico.tMin;
+  const atual = grafico.fim - grafico.ini;
+  const aproximar = evento.deltaY < 0;
+  // Já no período inteiro e rolando para afastar: deixa a página rolar normalmente.
+  if (!aproximar && atual >= total) return;
+  evento.preventDefault();
+
+  const minimo = Math.min(total, 2 * UM_DIA);
+  const novo = Math.min(Math.max(atual * (aproximar ? 0.8 : 1.25), minimo), total);
+  const caixa = el('produto-grafico').getBoundingClientRect();
+  const fracao = Math.min(Math.max((evento.clientX - caixa.left) / caixa.width, 0), 1);
+  const tMouse = grafico.ini + fracao * atual;
+
+  // O dia embaixo do mouse continua no mesmo lugar depois do zoom.
+  let ini = tMouse - fracao * novo;
+  ini = Math.min(Math.max(ini, grafico.tMin), grafico.tMax - novo);
+  grafico.ini = ini;
+  grafico.fim = ini + novo;
+  renderizarGrafico();
+  mostrarPrecoDoMouse(evento);
+}
+
+function configurarInteracaoDoGrafico() {
+  const area = el('produto-grafico');
+  area.style.position = 'relative';
+  area.style.cursor = 'crosshair';
+  area.addEventListener('mousemove', mostrarPrecoDoMouse);
+  area.addEventListener('mouseleave', esconderPrecoDoMouse);
+  area.addEventListener('wheel', zoomComScroll, { passive: false });
+  area.addEventListener('dblclick', () => {
+    if (!grafico.pontos.length) return;
+    grafico.ini = grafico.tMin;
+    grafico.fim = grafico.tMax;
+    renderizarGrafico();
+  });
 }
 
 async function analisarProduto() {
@@ -355,6 +474,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   el('btn-ver-analises').addEventListener('click', () => el('btn-nav-history').click());
   el('btn-criar-alerta').addEventListener('click', criarAlerta);
+  configurarInteracaoDoGrafico();
   el('btn-save-settings').addEventListener('click', salvarPreferencias);
 
   el('alertas-lista').addEventListener('change', async (evento) => {
