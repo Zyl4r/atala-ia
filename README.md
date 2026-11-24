@@ -107,3 +107,4 @@ git push origin main
 
 * **Biblioteca de Ícones (Lucide Icons):** [lucide.dev/icons](https://lucide.dev/icons)
 * **Pesquisa Teórica - CNW:** [Acessar pesquisa téorica - CNW](https://www.google.com/search?q=https://centropaulasouza-my.sharepoint.com/:w:/g/personal/evelyn_novais_aluno_cps_sp_gov_br/IQAs2vxCc8JvQJbC3ofhCOMQATchMG3ksxXTMMjVjRsdrO0%3Fe%3DYFqLzF)
+* **Banner e esboço da Feira de Ciências - CNW:** [Acessar canva](https://canva.link/8orpg81ymebubub)
