@@ -3,10 +3,21 @@
   "name": "Atala.ia",
   "description": "Analisa o preço do produto que você está vendo e diz se é hora de comprar ou de esperar.",
   "version": "1.1",
-  "action": {
-    "default_popup": "popup.html"
+
+  "icons": {
+    "16": "icons/icon.png",
+    "32": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
   },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon.png"
+  },
+
   "permissions": ["activeTab", "scripting", "storage"],
+
   "host_permissions": [
     "http://127.0.0.1:8000/*",
     "http://localhost:8000/*",
